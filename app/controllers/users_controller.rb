@@ -1,9 +1,11 @@
 class UsersController < Clearance::UsersController
+  def edit
+    @current_user = current_user
+  end
+
   def update
     foods = Food.find(params[:user][:food_ids].reject { |id| id.blank? })
-    foods.each do |food|
-      current_user.foods << food
-    end
+    foods.each { |food| current_user.foods << food }
     redirect_to new_device_path
   end
 

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/about', to: 'welcome#about'
   get '/team', to: 'welcome#team'
 
-  resources :users, controller: 'users', only: [:new, :create, :update]
+  resources :users, controller: 'users', only: [:new, :create, :edit, :update]
   resources :dashboard, only: :index
   resources :foods, only: [:new, :create]
   resources :devices, only: [:new, :create]
