@@ -19,6 +19,7 @@ feature 'User views landing page' do
 
     expect(page).to have_content 'Signed in as: user@example.com'
     expect(page).to have_title 'Dashboard'
+    expect(page).not_to have_link 'Sign in'
   end
 
   scenario 'they can view static pages' do
