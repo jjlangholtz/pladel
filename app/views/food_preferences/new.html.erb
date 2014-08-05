@@ -1,0 +1,7 @@
+<% provide(:title, 'Food Preferences') %>
+
+<%= form_for @preferences do |f| %>
+  <%= check_box_tag 'Apple' %>
+  <%= f.submit 'Save Preferences' %>
+<% end %>
+
