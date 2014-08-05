@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 feature 'User signs up for an account' do
-  scenario 'they visit the sign-up page' do
+  scenario 'they visit the sign-up page and skip devices' do
+    create(:food, name: 'Apple', group: 'fruit')
+
     visit sign_up_path
 
     expect(page).to have_title 'Sign Up'
@@ -17,9 +19,7 @@ feature 'User signs up for an account' do
 
     expect(page).to have_title 'Devices'
 
-    select 'Fitbit', from: 'Devices'
-    fill_in 'Key', with: '12345'
-    click_button 'Save Devices'
+    click_link 'Skip'
 
     expect(page).to have_title 'Dashboard'
   end

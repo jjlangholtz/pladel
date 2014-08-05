@@ -1,6 +1,3 @@
 <% provide(:title, 'Devices') %>
 
-<%= form_tag devices_path %>
-<%= select_tag('Devices', options_for_select([['Fitbit', 1]])) %>
-<%= text_field_tag 'Key' %>
-<%= submit_tag 'Save Devices' %>
+<%= link_to 'Skip', dashboard_index_path %>
