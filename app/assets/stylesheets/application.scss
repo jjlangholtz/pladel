@@ -13,6 +13,7 @@ p {
 	font-family: 'Roboto', sans-serif;
 }
 
+
 //navigation
 nav {
 	height: 50px;
@@ -34,6 +35,9 @@ nav {
 		float: right;
 		font-size: .9em;
 		margin: 13px 7px;
+		&:hover {
+			color: navy;
+		}
 	}
 }
 
@@ -45,6 +49,9 @@ header {
 	// background-image: url(http://i.imgur.com/Z83AyCb.gif?1);
 	background-size: cover;
 	background-position: fixed;
+	@media screen and (min-width: 700px) {
+		height: 450px;
+		}
 	
 
 	h1 {
@@ -56,18 +63,28 @@ header {
 		position: relative;
 		top: 44%;
 		text-shadow: -2px 0px 5px #000, 0px 1px 1px #000, 1px 0px 5px #000, 0px -1px 2px #000;
+		@media screen and (min-width: 700px) {
+		font-size: 2.7em;
+		top: 40%;
+		}
 	}
 }
 
 .infograph {
 	height: 350px;
 	background-color: #ecf0f1;
+	@media screen and (min-width: 700px) {
+		height: 550px;
+		}
 
 	h2 {
 		font-size: 1.1em;
 		text-align: center;
 		font-family: 'Varela', sans-serif;
 		padding: 45px 10px 5px;
+		@media screen and (min-width: 700px) {
+		font-size: 1.5em;
+		}
 	}
 
 	p {
@@ -75,6 +92,13 @@ header {
 		margin: 15px;
 		padding-top: 30px;
 		text-align: center;
+
+		@media screen and (min-width: 700px) {
+		font-size: 1.1em;
+		margin-left: 20%;
+		margin-right: 20%;
+		padding-top: 60px;
+		}
 	}
 
 
@@ -84,6 +108,18 @@ header {
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
+
+		@media screen and (min-width: 450px) {
+		width: 400px;
+		}
+		@media screen and (min-width: 700px) {
+		width: 550px;
+		padding-top: 75px;
+		}
+		@media screen and (min-width: 1000px) {
+		width: 700px;
+		}
+
 	}
 }
 
@@ -121,7 +157,7 @@ footer {
 
 	a {
 		color: white; 
-		margin: 10px;
+		margin: 20px;
 		position: relative;
 		top: 13px;
 	}
