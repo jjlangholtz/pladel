@@ -4,7 +4,28 @@ class User < ActiveRecord::Base
 
   include Clearance::User
 
+  has_many :sleep_sessions
   has_and_belongs_to_many :foods
+
+  def sleep_score
+    case
+    when sleep_composite >= 30
+      'A'
+    when sleep_composite >= 18 && sleep_composite < 30
+      'B'
+    when sleep_composite >= 10 && sleep_composite < 18
+      'C'
+    when sleep_composite >= 4 && sleep_composite < 10
+      'D'
+    else
+      'F'
+    end
+  end
+
+  def sleep_composite
+    sleep_scores = sleep_sessions.map { |s| s.score }
+    sleep_scores.inject(0.0) { |sum, el| sum + el } / sleep_sessions.size
+  end
 
   private
 

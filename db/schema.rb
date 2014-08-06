@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806192348) do
+ActiveRecord::Schema.define(version: 20140806203012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20140806192348) do
     t.integer "food_id"
     t.integer "user_id"
   end
+
+  create_table "sleep_sessions", force: true do |t|
+    t.integer "deep"
+    t.integer "times_woken"
+    t.integer "total"
+    t.integer "user_id"
+  end
+
+  add_index "sleep_sessions", ["user_id"], name: "index_sleep_sessions_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.datetime "created_at",                     null: false
