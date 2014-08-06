@@ -1,6 +1,32 @@
 <% provide(:title, 'Food Preferences') %>
 
 <%= form_for @current_user, url: user_path(@current_user), method: :patch do |f| %>
-  <%= f.collection_check_boxes :food_ids, Food.all, :id, :name %>
+  <div>
+    <%= f.collection_check_boxes :food_ids, Food.vegetables, :id, :name %>
+  </div>
+
+  <div>
+    <%= f.collection_check_boxes :food_ids, Food.fish, :id, :name %>
+  </div>
+
+  <div>
+    <%= f.collection_check_boxes :food_ids, Food.meat, :id, :name %>
+  </div>
+
+  <div>
+    <%= f.collection_check_boxes :food_ids, Food.nuts, :id, :name %>
+  </div>
+
+  <div>
+    <%= f.collection_check_boxes :food_ids, Food.fats, :id, :name %>
+  </div>
+
+  <div>
+    <%= f.collection_check_boxes :food_ids, Food.fruits, :id, :name %>
+  </div>
+
+  <div>
+    <%= f.collection_check_boxes :food_ids, Food.spices, :id, :name %>
+  </div>
   <%= f.submit 'Save Preferences' %>
 <% end %>
