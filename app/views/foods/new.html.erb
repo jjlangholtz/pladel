@@ -22,6 +22,10 @@
   </div>
 
   <div>
+    <%= f.collection_check_boxes :food_ids, Food.fruits, :id, :name %>
+  </div>
+
+  <div>
     <%= f.collection_check_boxes :food_ids, Food.spices, :id, :name %>
   </div>
   <%= f.submit 'Save Preferences' %>
