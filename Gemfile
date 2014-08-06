@@ -17,10 +17,12 @@ gem 'spring',        group: :development
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
+gem 'validic'
 
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0.2'
 end
@@ -34,4 +36,5 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'webmock'
 end

@@ -1,3 +1,4 @@
 <% provide(:title, 'Devices') %>
 
-<%= link_to 'Skip', dashboard_index_path %>
+<%= link_to 'Register Devices', "https://app.validic.com/#{ENV["VALIDIC_ORGANIZATION_ID"]}/#{current_user.token}" %>
+<%= link_to 'Continue', dashboard_index_path %>

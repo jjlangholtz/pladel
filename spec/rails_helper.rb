@@ -5,6 +5,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rails'
 require 'database_cleaner'
+require 'webmock/rspec'
+WebMock.disable_net_connect!(allow_localhost: true)
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -41,4 +43,13 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  # Webmock
+  config.before(:each) do
+    stub_request(:get, /api.validic.com/).
+      with(headers: {'Accept' =>  '*/*', 'User-Agent' => 'Ruby'}).
+      to_return(status: 200, body: 'stubbed response', headers: {})
+    stub_request(:post, /api.validic.com/).
+      to_return(status: 201, body: '{"user"=>{"_id"=>"12345", "access_token"=>"12345"}}', headers: {})
+  end
 end
