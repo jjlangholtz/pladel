@@ -8,9 +8,9 @@ feature 'User signs up for an account' do
 
     expect(page).to have_title 'Sign Up'
 
-    fill_in 'Email', with: 'user@example.com'
+    fill_in 'Email', with: 'test@example.com'
     fill_in 'Password', with: 'password'
-    click_button 'Sign up'
+    click_button 'Sign up!'
 
     expect(page).to have_title 'Food Preferences'
 
@@ -19,7 +19,7 @@ feature 'User signs up for an account' do
 
     expect(page).to have_title 'Devices'
 
-    click_link 'Skip'
+    click_link 'Continue'
 
     expect(page).to have_title 'Dashboard'
   end

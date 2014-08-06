@@ -8,10 +8,10 @@
 </head>
 <body>
 
-  <nav>
-  <a href="#" class="navLogo">PLADEL</a>
+<nav>
+  <%= link_to 'PLADEL', root_path, class: 'navLogo' %>
+  <%= link_to 'Sign up', sign_up_path, class: 'navLink' unless signed_in? %>
 
-  <a href="#" class="navLink">Sign up</a>
 
   <% if signed_in? %>
       Signed in as: <%= current_user.email %>
@@ -19,7 +19,7 @@
   <% else %>
       <%= link_to 'Sign in', sign_in_path, class: 'navLink'%>
   <% end %>
-</nav>  
+</nav>
 
   <div id="flash">
     <% flash.each do |key, value| %>
