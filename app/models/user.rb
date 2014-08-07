@@ -4,9 +4,14 @@ class User < ActiveRecord::Base
 
   include Clearance::User
 
+  has_many :meals
   has_many :movement_sessions
   has_many :sleep_sessions
   has_and_belongs_to_many :foods
+
+  def nutrition_score
+    'A'
+  end
 
   def sleep_score
     case

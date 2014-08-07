@@ -17,6 +17,10 @@ describe User do
     is_expected.to have_many(:movement_sessions)
   end
 
+  it 'has many meals' do
+    is_expected.to have_many(:meals)
+  end
+
   describe '#sleep_score' do
     context 'score >= 30' do
       it 'returns a letter grade A' do
