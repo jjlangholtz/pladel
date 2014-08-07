@@ -1,12 +1,27 @@
+<nav>
+  <img src="http://i.imgur.com/96GXzhc.png">
+  <%= link_to 'PLADEL', root_path, class: 'navLogo' %>
+
+
+  <% if signed_in? %>
+      Signed in as: <%= current_user.email %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete %>
+  <% else %>
+      <%= link_to 'Sign in', sign_in_path, class: 'navLink'%>
+  <% end %>
+</nav>
+
 <header>
+
 	<h1>Your blueprint for a healthy life.</h1>
+	<%= link_to 'Sign up', sign_up_path, class: 'signUp' unless signed_in? %>
 </header>
 
 <!-- infograph section -->
 
 <div class="infograph">
 	<h2>Begin your lifestyle transformation in 3 easy steps!</h2>
-	<img src="http://i.imgur.com/dKTAfE6.png">
+	<img src="http://i.imgur.com/pcGbVxW.png">
 	<p>Pladel makes understanding your health easy by giving you a grade for your overall health based on sleep, movement and nutrition.</p>
 </div>
 
@@ -14,25 +29,86 @@
 
 <section class="devices">
 	<h3>Supported devices</h3>
-	<div class="device" id="fuel">
-		<img src="http://www.electricavenueonline.net/sites/electricavenueonline.net/files/images/nikefuelband.jpg">
-		<p>Nike fuel</p>
-	</div>
+		
+		<div class="deviceContainer">		
+			<img src="https://validic.com/dev/wp-content/uploads/2013/08/Fitbit_Logo.png">
+		</div>
 
-	<div class="device" id="jawbone">
-		<img src="http://vitrine-media-cdn.withings.com/catalog/product/cache/7/image/9df78eab33525d08d6e5fb8d27136e95/s/c/scale-blue.png">
-		<p>Withings Scale</p>
-	</div>
+		<div class="deviceContainer">		
+			<img src="https://validic.com/dev/wp-content/uploads/2013/08/Fitbit_Logo.png">
+		</div>
 
-	<div class="device" id="fitbit">
-		<img src="http://i.imgur.com/wbnEu63.jpg?1">
-		<p>Jawbone Up</p>
-	</div>
+		<div class="deviceContainer">		
+			<img src="https://validic.com/dev/wp-content/uploads/2013/08/Fitbit_Logo.png">
+		</div>
+
+		<div class="deviceContainer">		
+			<img src="https://validic.com/dev/wp-content/uploads/2013/08/Fitbit_Logo.png">
+		</div>
+
+		<div class="deviceContainer">		
+			<img src="https://validic.com/dev/wp-content/uploads/2013/08/Fitbit_Logo.png">
+		</div>
+
+		<div class="deviceContainer">		
+			<img src="https://validic.com/dev/wp-content/uploads/2013/08/Fitbit_Logo.png">
+		</div>
+
+		<div class="deviceContainer">		
+			<img src="https://validic.com/dev/wp-content/uploads/2013/08/Fitbit_Logo.png">
+		</div>
+
+		<div class="deviceContainer">		
+			<img src="https://validic.com/dev/wp-content/uploads/2013/08/Fitbit_Logo.png">
+		</div>
+
+		<div class="deviceContainer">		
+			<img src="https://validic.com/dev/wp-content/uploads/2013/08/Fitbit_Logo.png">
+		</div>
+
+		<div class="deviceContainer">		
+			<img src="https://validic.com/dev/wp-content/uploads/2013/08/Fitbit_Logo.png">
+		</div>
+
+		<div class="deviceContainer">		
+			<img src="https://validic.com/dev/wp-content/uploads/2013/08/Fitbit_Logo.png">
+		</div>
+
+		<div class="deviceContainer">		
+			<img src="https://validic.com/dev/wp-content/uploads/2013/08/Fitbit_Logo.png">
+		</div>
+			
+	</section>
+
+<section class="infographTwo">
+
+	<p>Insert infograph here.</p>
 
 </section>
 
+<div class="sectionContainer">
 
-<footer>
-	<%= link_to 'About', about_path %>
-	<%= link_to 'Team', team_path %>
-</footer>	
+	<%= link_to 'The Team', team_path, class: 'team' %>
+
+	<section class="bios">
+
+		<div class="bio">
+			<img src="https://avatars1.githubusercontent.com/u/6842753?v=2&s=460">
+			<p>Lead Back-end Developer</p>
+		</div>	
+
+		<div class="bio">
+			<img src="https://avatars2.githubusercontent.com/u/6550704?v=2&s=460">
+			<p> Lead Front-end Developer</p>
+		</div>	
+
+		<div class="bio">
+			<img src="https://avatars1.githubusercontent.com/u/1505158?v=2&s=460">
+			<p>Project Manager</p>
+		</div>
+
+	</section>
+
+</div>	
+
+

@@ -2,7 +2,8 @@
 @import 'base/grid-settings';
 @import 'neat';
 @import 'base/base';
-@import url(http://fonts.googleapis.com/css?family=Varela|Roboto:100,300|Raleway);
+@import url(http://fonts.googleapis.com/css?family=Varela|Roboto:400|Raleway);
+@import url(http://fonts.googleapis.com/css?family=Michroma|Quicksand|Gruppo|Raleway);
 
 body{
 	margin: 0;
@@ -16,65 +17,124 @@ p {
 
 //navigation
 nav {
-	height: 50px;
-	background-color: #5DC4BC;
+	height: 65px;
+	background-color: rgba(88, 88, 88, 1);
+	position: fixed;
+	top: 0;
+	width: 100%;
 	// -webkit-box-shadow: 0 10px 6px -6px #777;
 	//    -moz-box-shadow: 0 10px 6px -6px #777;
 	//         box-shadow: 0 10px 6px -6px #777;
 
+	img {
+		width: 40px;
+		padding-top: 13px;
+		margin-left: 10px;
+		
+		@media screen and (min-width: 450px) {
+		width: 50px;
+		padding-top: 7px;
+		}
+	}
 
 	.navLogo {
 		color: white;
-		font-size: 1.4em;
-		margin-left: 7px;
+		font-size: 1em;
+		font-family: 'Gruppo', sans-serif;
 		position: relative;
-		top: 7px;
+		bottom: 15px;
+		@media screen and (min-width: 450px) {
+		font-size: 2em;
+		}
+	
 	}
 	.navLink {
 		color: white;
 		float: right;
-		font-size: .9em;
-		margin: 13px 7px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 1em;
+		margin: 18px 15px;
 		&:hover {
 			color: navy;
 		}
 	}
 }
 
+
 //header
 
+a.signUp {
+	color: #ecf0f1;
+	font-size: .7em;
+	@media screen and (min-width: 700px) {
+		font-size: 1.7em;
+		}
+}
+
+.signUp {
+	position: relative;
+	top: 70px;
+	left: 40px;
+	font-size: .7em;
+	@include button(simple, #75c9bc);
+	// border: 2px solid #000;
+	// padding: 5px;
+	// font-size: 0.8em;
+	// background-color: #75c9bc;
+	// border-radius: 7px;
+	@media screen and (min-width: 450px) {
+		left: 90px;
+		}
+	@media screen and (min-width: 700px) {
+		left: 175px;
+		top: 150px;
+		}	
+}
+
 header {
+	position: fixed;
+	top: 65px;
+	width: 100%;
 	height: 200px;
-	background: url(http://i.imgur.com/8qonHmD.gif?1) no-repeat 50% 70%;
+	z-index: -1;
+	background: url(http://i.istockimg.com/file_thumbview_approve/27062041/2/stock-photo-27062041-jogging-shoes-closeup.jpg) no-repeat 50% 70%;
 	// background-image: url(http://i.imgur.com/Z83AyCb.gif?1);
 	background-size: cover;
-	background-position: fixed;
 	@media screen and (min-width: 700px) {
-		height: 450px;
+		height: 500px;
 		}
 	
 
 	h1 {
-		font-family: 'Varela', sans-serif;
-		// text-transform: uppercase;
-		font-size: 1.2em;
+		font-family: 'Roboto', sans-serif;
+		text-transform: uppercase;
+		font-size: 1em;
 		text-align: center;
-		color: white;
+		color: #585858;
 		position: relative;
-		top: 44%;
-		text-shadow: -2px 0px 5px #000, 0px 1px 1px #000, 1px 0px 5px #000, 0px -1px 2px #000;
+		top: 30%;
+		max-width: 170px;
+		// text-shadow: -1px 0px 3px #000, 0px 1px 1px #000, 1px 0px 3px #000, 0px -1px 1px #000;
+		@media screen and (min-width: 450px) {
+		font-size: 1.3em;
+		max-width: 250px;
+		}
 		@media screen and (min-width: 700px) {
-		font-size: 2.7em;
-		top: 40%;
+		font-size: 3em;
+		max-width: 550px;
 		}
 	}
 }
 
+// Infograph One
+
 .infograph {
+	margin-top: 264px;
 	height: 350px;
 	background-color: #ecf0f1;
 	@media screen and (min-width: 700px) {
 		height: 550px;
+		margin-top: 564px;
 		}
 
 	h2 {
@@ -124,23 +184,27 @@ header {
 }
 
 .devices {
+	background-color: white;
 	// border: solid	black 2px;
-	height: 200px;
+	height: 175px;
 	text-align: center;
+	width: 100%;
+	@media screen and (min-width: 700px) {
+		height: 200px;
+		}
 
 	h3 {
 		font-size: 1.1em;
-		padding: 15px;
+		padding: 23px;
 	}
 
-	.device {
-		width: 33%;
-		float: left;
+	.deviceContainer {
+		display: inline-block;
+		width: 21%;
 
-		img {
-			position: relative;
-			top: 10px;
-			height: 100px;
+			// position: relative;
+			// top: 10px;
+			// height: 100px;
 		}
 
 		p {
@@ -148,20 +212,90 @@ header {
 			font-size: .9em;
 		}
 	}
+
+//Infograph Two Section
+
+.infographTwo {
+	height: 500px;
+	background-color: #ECF0F1;
 }
 
-footer {
-		height: 50px;
-		background-color: #5DC4BC;
+//Bio Section
+
+.sectionContainer {
+	height: 300px;
+	background-color: #585858;
+	text-align: center;
+}
+
+.bios {
+	@include outer-container;
+	text-align: center;
+	padding-top: 25px;
+	.bio {
+		@include span-columns(4);
 		text-align: center;
+		margin-top: 25px;
+		p {
+			color: white;
+			font-size: .7em;
+			@media screen and (min-width: 800px) {
+			font-size: 1em;
+		}
+		}
 
-	a {
-		color: white; 
-		margin: 20px;
-		position: relative;
-		top: 13px;
+		img {
+			width: 80px;
+			border-radius: 50%;
+			@media screen and (min-width: 450px) {
+			width: 120px;
+		}
+		}
 	}
+}
 
+.team{
+	font-size: 2em;
+	padding: 20px;
+	position: relative;
+	top: 15px;
+	color: #75c9bc;
+}
+
+// Footer
+
+// footer {
+// 		height: 50px;
+// 		background-color: #75c9bc;
+// 		text-align: center;
+// 		position: fixed;
+// 		bottom: 0;
+
+// 	a {
+// 		color: white; 
+// 		margin: 20px;
+// 		position: relative;
+// 		top: 13px;
+// 	}
+//}
+
+//Team Page
+
+.teamPageContainer {
+	height: 750px;
+	background-size: cover;
+	background-color: #585858;
+	text-align: center;
+	@media screen and (max-width: 800px) {
+			height: 900px;
+		}
+
+
+	.bio {
+		@media screen and (max-width: 800px) {
+			@include span-columns(12);
+		}
+	}
 }
 
 

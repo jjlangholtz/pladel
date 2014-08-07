@@ -8,26 +8,17 @@
 </head>
 <body>
 
-<nav>
-  <%= link_to 'PLADEL', root_path, class: 'navLogo' %>
-  <%= link_to 'Sign up', sign_up_path, class: 'navLink' unless signed_in? %>
+  
 
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
 
-  <% if signed_in? %>
-      Signed in as: <%= current_user.email %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
-  <% else %>
-      <%= link_to 'Sign in', sign_in_path, class: 'navLink'%>
-  <% end %>
-</nav>
+  <%= yield %>
 
-  <div id="flash">
-    <% flash.each do |key, value| %>
-      <div class="flash <%= key %>"><%= value %></div>
-    <% end %>
-  </div>
-
-<%= yield %>
+ <!-- removed footer -->
 
 </body>
 </html>
