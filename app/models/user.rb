@@ -9,8 +9,34 @@ class User < ActiveRecord::Base
   has_many :sleep_sessions
   has_and_belongs_to_many :foods
 
+  def health_gpa
+    case
+    when health_composite >= 3.3
+      'A'
+    when health_composite >= 2.7 && health_composite < 3.3
+      'B'
+    when health_composite >= 2.0 && health_composite < 2.7
+      'C'
+    when health_composite >= 1.0 && health_composite < 2.0
+      'D'
+    else
+      'F'
+    end
+  end
+
   def nutrition_score
-    'A'
+    case
+    when nutrition_composite >= 0.8
+      'A'
+    when nutrition_composite >= 0.7 && nutrition_composite < 0.8
+      'B'
+    when nutrition_composite >= 0.6 && nutrition_composite < 0.7
+      'C'
+    when nutrition_composite >= 0.5 && nutrition_composite < 0.6
+      'D'
+    else
+      'F'
+    end
   end
 
   def sleep_score
@@ -43,6 +69,62 @@ class User < ActiveRecord::Base
     end
   end
 
+  def health_composite
+    nutrition = nutrition_score_to_gpa
+    sleep = sleep_score_to_gpa
+    movement = movement_score_to_gpa
+    (nutrition + sleep + movement) / 3
+  end
+
+  def nutrition_score_to_gpa
+    case nutrition_score
+    when 'A'
+      4.0
+    when 'B'
+      3.0
+    when 'C'
+      2.0
+    when 'D'
+      1.0
+    when 'F'
+      0.0
+    end
+  end
+
+  def sleep_score_to_gpa
+    case sleep_score
+    when 'A'
+      4.0
+    when 'B'
+      3.0
+    when 'C'
+      2.0
+    when 'D'
+      1.0
+    when 'F'
+      0.0
+    end
+  end
+
+  def movement_score_to_gpa
+    case movement_score
+    when 'A'
+      4.0
+    when 'B'
+      3.0
+    when 'C'
+      2.0
+    when 'D'
+      1.0
+    when 'F'
+      0.0
+    end
+  end
+
+  def nutrition_composite
+    complete_meals.to_f / total_meals.to_f
+  end
+
   def sleep_composite
     sleep_scores = sleep_sessions.map { |s| s.score }
     sleep_scores.inject(0.0) { |sum, el| sum + el } / sleep_sessions.size
@@ -51,6 +133,14 @@ class User < ActiveRecord::Base
   def movement_composite
     movement_scores = movement_sessions.map { |s| s.score }
     movement_scores.inject(0.0) { |sum, el| sum + el } / movement_sessions.size
+  end
+
+  def total_meals
+    Meal.where(status: ['complete', 'incomplete'], user: self.id).count
+  end
+
+  def complete_meals
+    Meal.where(status: 'complete', user: self.id).count
   end
 
   private
