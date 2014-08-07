@@ -13,8 +13,7 @@ feature 'Check sleep score' do
     click_button 'Sign in'
 
     within('.sleep') do
-      grade = user.sleep_score
-      expect(grade).to eq 'A'
+      expect(page).to have_content 'A'
     end
   end
 end

@@ -13,8 +13,7 @@ feature 'Check movement score' do
     click_button 'Sign in'
 
     within('.movement') do
-      grade = user.movement_score
-      expect(grade).to eq 'A'
+      expect(page).to have_content 'A'
     end
   end
 end
