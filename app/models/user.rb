@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   include Clearance::User
 
+  has_many :movement_sessions
   has_many :sleep_sessions
   has_and_belongs_to_many :foods
 
@@ -22,9 +23,29 @@ class User < ActiveRecord::Base
     end
   end
 
+  def movement_score
+    case
+    when movement_composite >= 5000
+      'A'
+    when movement_composite >= 3000 && movement_composite < 5000
+      'B'
+    when movement_composite >= 1500 && movement_composite < 3000
+      'C'
+    when movement_composite >= 800 && movement_composite < 1500
+      'D'
+    else
+      'F'
+    end
+  end
+
   def sleep_composite
     sleep_scores = sleep_sessions.map { |s| s.score }
     sleep_scores.inject(0.0) { |sum, el| sum + el } / sleep_sessions.size
+  end
+
+  def movement_composite
+    movement_scores = movement_sessions.map { |s| s.score }
+    movement_scores.inject(0.0) { |sum, el| sum + el } / movement_sessions.size
   end
 
   private

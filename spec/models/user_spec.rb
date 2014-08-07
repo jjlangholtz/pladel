@@ -13,6 +13,10 @@ describe User do
     is_expected.to have_many(:sleep_sessions)
   end
 
+  it 'has many movement sessions' do
+    is_expected.to have_many(:movement_sessions)
+  end
+
   describe '#sleep_score' do
     context 'score >= 30' do
       it 'returns a letter grade A' do
@@ -76,6 +80,65 @@ describe User do
       result = user.sleep_composite
 
       expect(result).to eq 64
+    end
+  end
+
+  describe '#movement_score' do
+    context 'score >= 5000' do
+      it 'returns a letter grade A' do
+        user = create(:user)
+        create(:movement_session, distance: 13200, calories_burned: 2000, user: user)
+
+        expect(user.movement_score).to eq 'A'
+      end
+    end
+
+    context '3000 <= score < 5000' do
+      it 'returns a letter grade B' do
+        user = create(:user)
+        create(:movement_session, distance: 5280, calories_burned: 3000, user: user)
+
+        expect(user.movement_score).to eq 'B'
+      end
+    end
+
+    context '1500 <= score < 3000' do
+      it 'returns a letter grade C' do
+        user = create(:user)
+        create(:movement_session, distance: 5280, calories_burned: 1500, user: user)
+
+        expect(user.movement_score).to eq 'C'
+      end
+    end
+
+    context '800 <= score < 1500' do
+      it 'returns a letter grade D' do
+        user = create(:user)
+        create(:movement_session, distance: 5280, calories_burned: 800, user: user)
+
+        expect(user.movement_score).to eq 'D'
+      end
+    end
+
+    context 'score < 800' do
+      it 'returns a letter grade F' do
+        user = create(:user)
+        create(:movement_session, distance: 5280, calories_burned: 799, user: user)
+
+        expect(user.movement_score).to eq 'F'
+      end
+    end
+  end
+
+  describe '#movement_composite' do
+    it 'returns a composite of movement session scores' do
+      user = create(:user)
+      create(:movement_session, distance: 20000, calories_burned: 1400, user: user)
+      create(:movement_session, distance: 5280, calories_burned: 500, user: user)
+
+      result = user.movement_composite
+
+      expect(result).to eq 2901.5
     end
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806203012) do
+ActiveRecord::Schema.define(version: 20140806225920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20140806203012) do
     t.integer "food_id"
     t.integer "user_id"
   end
+
+  create_table "movement_sessions", force: true do |t|
+    t.integer "distance"
+    t.integer "calories_burned"
+    t.integer "user_id"
+  end
+
+  add_index "movement_sessions", ["user_id"], name: "index_movement_sessions_on_user_id", using: :btree
 
   create_table "sleep_sessions", force: true do |t|
     t.integer "deep"
