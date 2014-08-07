@@ -47,7 +47,6 @@ RSpec.configure do |config|
   # Webmock
   config.before(:each) do
     stub_request(:get, /api.validic.com/).
-      with(headers: {'Accept' =>  '*/*', 'User-Agent' => 'Ruby'}).
       to_return(status: 200, body: 'stubbed response', headers: {})
     stub_request(:post, /api.validic.com/).
       to_return(status: 201, body: '{"user"=>{"_id"=>"12345", "access_token"=>"12345"}}', headers: {})
