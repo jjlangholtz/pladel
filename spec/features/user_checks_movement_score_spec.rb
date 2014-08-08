@@ -4,7 +4,7 @@ feature 'Check movement score' do
   scenario 'Visits dashboard and sees grade' do
     user = create(:user)
     create(:movement_session, steps: 20000, user: user)
-    visit dashboard_index_path(as: user)
+    visit dashboard_path(as: user)
 
     within('.movement') do
       expect(page).to have_content 'A'

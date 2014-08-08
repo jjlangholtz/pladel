@@ -7,7 +7,7 @@ feature 'Check health GPA' do
       create(:sleep_session, deep: 480, total: 480, times_woken: 0, user: user)
       create(:movement_session, steps: 20000, user: user)
       create(:meal, status: 'complete', user: user)
-      visit dashboard_index_path(as: user)
+      visit dashboard_path(as: user)
 
       within('.health') do
         expect(page).to have_content 'A'
@@ -21,7 +21,7 @@ feature 'Check health GPA' do
       create(:sleep_session, deep: 50, total: 100, times_woken: 10, user: user)
       create(:movement_session, steps: 100, user: user)
       create(:meal, status: 'incomplete', user: user)
-      visit dashboard_index_path(as: user)
+      visit dashboard_path(as: user)
 
       within('.health') do
         expect(page).to have_content 'F'

@@ -5,7 +5,7 @@ feature 'Check nutrition score' do
     scenario 'and sees A' do
       user = create(:user)
       create(:meal, status: 'complete', user: user)
-      visit dashboard_index_path(as: user)
+      visit dashboard_path(as: user)
 
       within('.nutrition') do
         expect(page).to have_content 'A'
@@ -17,7 +17,7 @@ feature 'Check nutrition score' do
     scenario 'and sees F' do
       user = create(:user)
       create(:meal, status: 'incomplete', user: user)
-      visit dashboard_index_path(as: user)
+      visit dashboard_path(as: user)
 
       within('.nutrition') do
         expect(page).to have_content 'F'
