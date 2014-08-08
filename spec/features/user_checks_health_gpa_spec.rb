@@ -16,8 +16,7 @@ feature 'Check health GPA' do
       click_button 'Sign in'
 
       within('.health') do
-        grade = user.health_gpa
-        expect(grade).to eq 'A'
+        expect(page).to have_content 'A'
       end
     end
   end
@@ -37,8 +36,7 @@ feature 'Check health GPA' do
       click_button 'Sign in'
 
       within('.health') do
-        grade = user.health_gpa
-        expect(grade).to eq 'F'
+        expect(page).to have_content 'F'
       end
     end
   end

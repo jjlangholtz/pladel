@@ -9,6 +9,33 @@ class User < ActiveRecord::Base
   has_many :sleep_sessions
   has_and_belongs_to_many :foods
 
+  def get_sleep_sessions
+    client = Validic::Client.new
+    sleep = client.get_sleep(user_id: self.uid, start_date: '2014-08-01T00:00:00+00:00')
+    sleep_sessions = sleep["sleep"]
+
+    if sleep_sessions
+      sleep_sessions.each do |s|
+        self.sleep_sessions.create(total: s["total_sleep"],
+                                  times_woken: s["times_woken"],
+                                  deep: s["deep"])
+      end
+    end
+  end
+
+  def get_routine_sessions
+    client = Validic::Client.new
+    routine = client.get_routine(user_id: self.uid, start_date: '2014-08-01T00:00:00+00:00')
+    routine_sessions = routine["routine"]
+
+    if routine_sessions
+      routine_sessions.each do |r|
+        self.movement_sessions.create(distance: r["distance"],
+                                      calories_burned: r["calories_burned"])
+      end
+    end
+  end
+
   def health_gpa
     case
     when health_composite >= 3.3
