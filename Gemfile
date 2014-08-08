@@ -18,6 +18,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 gem 'validic'
+gem 'yummly'
 
 group :development, :test do
   gem 'better_errors'
