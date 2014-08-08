@@ -1,0 +1,46 @@
+.sign-up {
+	padding-top: 100px;
+	text-align: center;
+	color: white;
+	a {
+		color: #75C9BC;
+	}
+
+}
+
+.sign-in {
+	padding-top: 100px;
+	text-align: center;
+	color: white;
+	a {
+		color: #75C9BC;
+		&:hover {
+			color: white;
+		}
+	}
+}
+
+// .new-user {
+// 	text-align: center;
+// }
+
+form {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	@media screen and (min-width: 700px) {
+		width: 400px;
+		}	
+}
+
+.submit-field {
+	text-align: center;
+}
+
+.submit-field input {
+	background-color: #75C9BC;
+}
+
+.other-links a {
+	display: block;
+}
