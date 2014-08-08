@@ -30,8 +30,8 @@ class User < ActiveRecord::Base
 
     if routine_sessions
       routine_sessions.each do |r|
-        self.movement_sessions.create(distance: r["distance"],
-                                      calories_burned: r["calories_burned"])
+        self.movement_sessions.create(steps: r["steps"],
+                                      timestamp: r["timestamp"])
       end
     end
   end
@@ -83,13 +83,13 @@ class User < ActiveRecord::Base
 
   def movement_score
     case
-    when movement_composite >= 5000
+    when movement_composite >= 10000
       'A'
-    when movement_composite >= 3000 && movement_composite < 5000
+    when movement_composite >= 7000 && movement_composite < 10000
       'B'
-    when movement_composite >= 1500 && movement_composite < 3000
+    when movement_composite >= 4000 && movement_composite < 7000
       'C'
-    when movement_composite >= 800 && movement_composite < 1500
+    when movement_composite >= 2000 && movement_composite < 4000
       'D'
     else
       'F'
@@ -158,8 +158,8 @@ class User < ActiveRecord::Base
   end
 
   def movement_composite
-    movement_scores = movement_sessions.map { |s| s.score }
-    movement_scores.inject(0.0) { |sum, el| sum + el } / movement_sessions.size
+    total_steps = movement_sessions.map { |s| s.steps }
+    total_steps.inject(0.0) { |sum, el| sum + el } / movement_sessions.size
   end
 
   def total_meals
