@@ -2,6 +2,7 @@
 @import 'base/grid-settings';
 @import 'neat';
 @import 'base/base';
+@import 'users/_form';
 @import url(http://fonts.googleapis.com/css?family=Varela|Roboto:400|Raleway);
 @import url(http://fonts.googleapis.com/css?family=Michroma|Quicksand|Gruppo|Raleway);
 
@@ -88,11 +89,11 @@ a.signUp {
 	// background-color: #75c9bc;
 	// border-radius: 7px;
 	@media screen and (min-width: 450px) {
-		left: 90px;
+		left: 75px;
 		}
 	@media screen and (min-width: 700px) {
 		left: 175px;
-		top: 150px;
+		top: 160px;
 		}	
 }
 
