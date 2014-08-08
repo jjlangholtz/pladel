@@ -6,30 +6,28 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+  <body>
 
-  <nav>
-    <img src="http://i.imgur.com/96GXzhc.png">
-    <%= link_to 'PLADEL', root_path, class: 'navLogo' %>
+    <nav>
+      <img src="http://i.imgur.com/96GXzhc.png">
+      <%= link_to 'PLADEL', root_path, class: 'navLogo' %>
 
 
-    <% if signed_in? %>
-        Signed in as: <%= current_user.email %>
-        <%= button_to 'Sign out', sign_out_path, method: :delete %>
-    <% else %>
-        <%= link_to 'Sign in', sign_in_path, class: 'navLink'%>
-    <% end %>
-  </nav>
-
-    <div id="flash">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
+      <% if signed_in? %>
+          Signed in as: <%= current_user.email %>
+          <%= button_to 'Sign out', sign_out_path, method: :delete %>
+      <% else %>
+          <%= link_to 'Sign in', sign_in_path, class: 'navLink'%>
       <% end %>
-    </div>
+    </nav>
 
-  <%= yield %>
+      <div id="flash">
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+      </div>
 
- <!-- removed footer -->
+    <%= yield %>
 
-</body>
+  </body>
 </html>
