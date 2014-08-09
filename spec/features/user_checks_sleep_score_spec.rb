@@ -2,15 +2,9 @@ require 'rails_helper'
 
 feature 'Check sleep score' do
   scenario 'Visits dashboard and sees grade' do
-    user = create(:user, email: 'user@example.com', password: 'password')
+    user = create(:user)
     create(:sleep_session, deep: 480, total: 480, times_woken: 0, user: user)
-
-    visit root_path
-    click_link 'Sign in'
-
-    fill_in 'Email', with: 'user@example.com'
-    fill_in 'Password', with: 'password'
-    click_button 'Sign in'
+    visit dashboard_path(as: user)
 
     within('.sleep') do
       expect(page).to have_content 'A'

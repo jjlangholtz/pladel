@@ -3,15 +3,9 @@ require 'rails_helper'
 feature 'Check nutrition score' do
   context 'with great nutrition' do
     scenario 'and sees A' do
-      user = create(:user, email: 'user@example.com', password: 'password')
+      user = create(:user)
       create(:meal, status: 'complete', user: user)
-
-      visit root_path
-      click_link 'Sign in'
-
-      fill_in 'Email', with: 'user@example.com'
-      fill_in 'Password', with: 'password'
-      click_button 'Sign in'
+      visit dashboard_path(as: user)
 
       within('.nutrition') do
         expect(page).to have_content 'A'
@@ -21,15 +15,9 @@ feature 'Check nutrition score' do
 
   context 'with poor nutrition' do
     scenario 'and sees F' do
-      user = create(:user, email: 'user@example.com', password: 'password')
+      user = create(:user)
       create(:meal, status: 'incomplete', user: user)
-
-      visit root_path
-      click_link 'Sign in'
-
-      fill_in 'Email', with: 'user@example.com'
-      fill_in 'Password', with: 'password'
-      click_button 'Sign in'
+      visit dashboard_path(as: user)
 
       within('.nutrition') do
         expect(page).to have_content 'F'

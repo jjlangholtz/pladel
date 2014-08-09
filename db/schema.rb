@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807041732) do
+ActiveRecord::Schema.define(version: 20140809160925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20140807041732) do
   add_index "meals", ["user_id"], name: "index_meals_on_user_id", using: :btree
 
   create_table "movement_sessions", force: true do |t|
-    t.integer "distance"
-    t.integer "calories_burned"
     t.integer "user_id"
+    t.float   "steps"
+    t.string  "timestamp"
   end
 
   add_index "movement_sessions", ["user_id"], name: "index_movement_sessions_on_user_id", using: :btree
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20140807041732) do
     t.string   "uid"
     t.string   "token"
     t.string   "pid"
+    t.integer  "meals_per_day"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

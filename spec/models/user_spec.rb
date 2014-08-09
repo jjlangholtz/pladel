@@ -88,46 +88,46 @@ describe User do
   end
 
   describe '#movement_score' do
-    context 'score >= 5000' do
+    context 'score >= 10000' do
       it 'returns a letter grade A' do
         user = create(:user)
-        create(:movement_session, distance: 13200, calories_burned: 2000, user: user)
+        create(:movement_session, steps: 10000, user: user)
 
         expect(user.movement_score).to eq 'A'
       end
     end
 
-    context '3000 <= score < 5000' do
+    context '7000 <= score < 10000' do
       it 'returns a letter grade B' do
         user = create(:user)
-        create(:movement_session, distance: 5280, calories_burned: 3000, user: user)
+        create(:movement_session, steps: 7000, user: user)
 
         expect(user.movement_score).to eq 'B'
       end
     end
 
-    context '1500 <= score < 3000' do
+    context '4000 <= score < 7000' do
       it 'returns a letter grade C' do
         user = create(:user)
-        create(:movement_session, distance: 5280, calories_burned: 1500, user: user)
+        create(:movement_session, steps: 4000, user: user)
 
         expect(user.movement_score).to eq 'C'
       end
     end
 
-    context '800 <= score < 1500' do
+    context '2000 <= score < 4000' do
       it 'returns a letter grade D' do
         user = create(:user)
-        create(:movement_session, distance: 5280, calories_burned: 800, user: user)
+        create(:movement_session, steps: 2000, user: user)
 
         expect(user.movement_score).to eq 'D'
       end
     end
 
-    context 'score < 800' do
+    context 'score < 2000' do
       it 'returns a letter grade F' do
         user = create(:user)
-        create(:movement_session, distance: 5280, calories_burned: 799, user: user)
+        create(:movement_session, steps: 0, user: user)
 
         expect(user.movement_score).to eq 'F'
       end
@@ -137,12 +137,12 @@ describe User do
   describe '#movement_composite' do
     it 'returns a composite of movement session scores' do
       user = create(:user)
-      create(:movement_session, distance: 20000, calories_burned: 1400, user: user)
-      create(:movement_session, distance: 5280, calories_burned: 500, user: user)
+      create(:movement_session, steps: 8000, user: user)
+      create(:movement_session, steps: 4000, timestamp: 'Yesterday', user: user)
 
       result = user.movement_composite
 
-      expect(result).to eq 2901.5
+      expect(result).to eq 6000
     end
   end
 
@@ -219,12 +219,23 @@ describe User do
   end
 
   describe '#complete_meals' do
-    it 'returns the count of complete' do
+    it 'returns the count of complete meals' do
       user = create(:user)
       create(:meal, status: 'complete', user: user)
       create(:meal, status: 'incomplete', user: user)
 
       expect(user.complete_meals).to eq 1
+    end
+  end
+
+  describe '#active_meals' do
+    it 'returns an array of active meals' do
+      user = create(:user)
+      active = create(:meal, status: 'active', user: user)
+      incomplete = create(:meal, status: 'incomplete', user: user)
+
+      expect(user.active_meals).to include(active)
+      expect(user.active_meals).not_to include(incomplete)
     end
   end
 
@@ -309,6 +320,16 @@ describe User do
       allow(user).to receive(:sleep_score).and_return('A')
 
       expect(user.sleep_score_to_gpa).to eq 4.0
+    end
+  end
+
+  describe '#create_active_meals' do
+    it 'creates new meals for user with a status of active' do
+      user = create(:user)
+
+      user.create_active_meals(3)
+
+      expect(user.active_meals.count).to eq 3
     end
   end
 end
