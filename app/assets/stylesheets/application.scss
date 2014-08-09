@@ -311,6 +311,9 @@ header {
 	font-size: .9em;
 	padding: 10px;
 	font-size: .7em;
+	p span {
+		color: #75c9bc;
+	}
 	@media screen and (min-width: 700px) {
 		font-size: 1.2em;
 		}
