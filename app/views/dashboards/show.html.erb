@@ -24,3 +24,9 @@
   <%= number_field_tag :on_diet %>
   <%= submit_tag 'Complete meals' %>
 </div>
+
+<ul>
+  <% current_user.active_meals.each do |meal| %>
+    <li class="daily_meal"><%= button_to "Meal #{meal.id}", meal_path(meal.id), method: :patch %></li>
+  <% end %>
+</ul>

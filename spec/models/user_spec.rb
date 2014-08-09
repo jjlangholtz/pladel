@@ -219,12 +219,23 @@ describe User do
   end
 
   describe '#complete_meals' do
-    it 'returns the count of complete' do
+    it 'returns the count of complete meals' do
       user = create(:user)
       create(:meal, status: 'complete', user: user)
       create(:meal, status: 'incomplete', user: user)
 
       expect(user.complete_meals).to eq 1
+    end
+  end
+
+  describe '#active_meals' do
+    it 'returns an array of active meals' do
+      user = create(:user)
+      active = create(:meal, status: 'active', user: user)
+      incomplete = create(:meal, status: 'incomplete', user: user)
+
+      expect(user.active_meals).to include(active)
+      expect(user.active_meals).not_to include(incomplete)
     end
   end
 
@@ -309,6 +320,16 @@ describe User do
       allow(user).to receive(:sleep_score).and_return('A')
 
       expect(user.sleep_score_to_gpa).to eq 4.0
+    end
+  end
+
+  describe '#create_active_meals' do
+    it 'creates new meals for user with a status of active' do
+      user = create(:user)
+
+      user.create_active_meals(3)
+
+      expect(user.active_meals.count).to eq 3
     end
   end
 end

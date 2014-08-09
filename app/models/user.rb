@@ -170,6 +170,14 @@ class User < ActiveRecord::Base
     Meal.where(status: 'complete', user: self.id).count
   end
 
+  def active_meals
+    Meal.where(status: 'active', user: self.id)
+  end
+
+  def create_active_meals(count)
+    count.times { meals.create!(status: 'active') }
+  end
+
   private
 
   def generate_pid

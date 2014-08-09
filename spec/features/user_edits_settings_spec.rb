@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'User edits settings' do
   scenario 'adds food preferences' do
     create(:user, email: 'user@example.com', password: 'password')
-    create(:food, name: 'Banana', group: 'fruit')
+    create(:food, name: 'Banana', group: 'fruits')
 
     visit root_path
     click_link 'Sign in'
