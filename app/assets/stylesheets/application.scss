@@ -49,6 +49,9 @@ nav {
 		font-family: 'Gruppo', sans-serif;
 		position: relative;
 		bottom: 15px;
+		&:hover {
+			color: #75c9bc;
+		}
 		@media screen and (min-width: 450px) {
 		font-size: 2em;
 		}
@@ -58,10 +61,10 @@ nav {
 		color: white;
 		float: right;
 		font-family: 'Roboto', sans-serif;
-		font-size: 1em;
-		margin: 18px 15px;
+		font-size: .8em;
+		margin: 18px 8px;
 		&:hover {
-			color: navy;
+			color: #75c9bc;
 		}
 	}
 }
@@ -136,12 +139,18 @@ header {
 
 .infograph {
 	margin-top: 264px;
-	height: 350px;
+	height: 265px;
 	background-color: #ecf0f1;
+	@media screen and (min-width: 450px) {
+		height: 300px;
+	}
 	@media screen and (min-width: 700px) {
-		height: 550px;
+		height: 340px;
 		margin-top: 564px;
-		}
+	}
+	@media screen and (min-width: 1000px) {
+		height: 360px;
+	}	
 
 	h2 {
 		font-size: 1.1em;
@@ -152,40 +161,24 @@ header {
 		font-size: 1.5em;
 		}
 	}
+}
 
-	p {
-		font-size: 0.8em;
-		margin: 15px;
-		padding-top: 30px;
-		text-align: center;
+.infoPic {
+	width: 250px;
+	padding-top: 33px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 
-		@media screen and (min-width: 700px) {
-		font-size: 1.1em;
-		margin-left: 20%;
-		margin-right: 20%;
-		padding-top: 60px;
-		}
+	@media screen and (min-width: 450px) {
+	width: 400px;
 	}
-
-
-	img {
-		width: 250px;
-		padding-top: 33px;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-
-		@media screen and (min-width: 450px) {
-		width: 400px;
-		}
-		@media screen and (min-width: 700px) {
-		width: 550px;
-		padding-top: 75px;
-		}
-		@media screen and (min-width: 1000px) {
-		width: 700px;
-		}
-
+	@media screen and (min-width: 700px) {
+	width: 550px;
+	// padding-top: 75px;
+	}
+	@media screen and (min-width: 1000px) {
+	width: 700px;
 	}
 }
 
@@ -222,8 +215,29 @@ header {
 //Infograph Two Section
 
 .infographTwo {
-	height: 500px;
+	height: 375px;
 	background-color: #ECF0F1;
+	@media screen and (min-width: 450px) {
+	height: 500px;
+	}
+	@media screen and (min-width: 700px) {
+	height: 530px;
+	}
+	.infoPic {
+		max-width: 400px;
+		padding-top: -20px;
+	}
+		p {
+		font-size: 0.8em;
+		margin: 15px;
+		text-align: center;
+
+		@media screen and (min-width: 700px) {
+		font-size: 1.1em;
+		margin-left: 20%;
+		margin-right: 20%;
+		}
+	}
 }
 
 //Bio Section
@@ -242,10 +256,18 @@ header {
 		@include span-columns(4);
 		text-align: center;
 		margin-top: 25px;
+		h4 {
+			font-size: .8em;
+			color: #75c9bc;
+			@media screen and (min-width: 700px) {
+			font-size: 1.5em;
+			font-family: 'Roboto';
+			}
+		}
 		p {
 			color: white;
 			font-size: .7em;
-			@media screen and (min-width: 800px) {
+			@media screen and (min-width: 700px) {
 			font-size: 1em;
 		}
 		}
@@ -266,7 +288,10 @@ header {
 	padding: 20px;
 	position: relative;
 	top: 15px;
-	color: #75c9bc;
+	color: #ECF0F1;
+	&:hover {
+			color: #75c9bc;
+		}
 }
 
 
