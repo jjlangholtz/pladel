@@ -10,6 +10,6 @@ describe MovementSession do
   end
 
   it 'has a unique timestamp' do
-    is_expected.to validate_uniqueness_of(:timestamp)
+    is_expected.to validate_uniqueness_of(:timestamp).scoped_to(:user_id)
   end
 end
