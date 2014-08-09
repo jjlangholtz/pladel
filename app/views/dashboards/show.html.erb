@@ -17,16 +17,9 @@
 </div>
 
 <div class="meals">
-  <%= form_tag meals_path, method: :post %>
-  <%= label_tag :total_meals, 'How many meals would you like to add?' %>
-  <%= number_field_tag :total_meals %>
-  <%= label_tag :on_diet, 'How many were on diet?' %>
-  <%= number_field_tag :on_diet %>
-  <%= submit_tag 'Complete meals' %>
+  <ul>
+    <% current_user.active_meals.each do |meal| %>
+      <li class="daily_meal"><%= button_to "Finish meal", meal_path(meal), method: :patch %></li>
+    <% end %>
+  </ul>
 </div>
-
-<ul>
-  <% current_user.active_meals.each do |meal| %>
-    <li class="daily_meal"><%= button_to "Meal #{meal.id}", meal_path(meal.id), method: :patch %></li>
-  <% end %>
-</ul>
