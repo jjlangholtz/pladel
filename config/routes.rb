@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, controller: 'users', only: [:new, :create, :edit, :update]
   resources :foods, only: [:new, :create]
-  resources :devices, only: [:new, :create]
+  resources :devices, only: :new
   resources :meals, only: :update
+  resources :sessions, only: :index
 end

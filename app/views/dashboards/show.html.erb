@@ -16,10 +16,12 @@
   <%= current_user.nutrition_score %>
 </div>
 
+<%= link_to 'Sync data', sessions_path %>
+
 <div class="meals">
   <ul>
     <% current_user.active_meals.each do |meal| %>
-      <li class="daily_meal"><%= button_to "Finish meal", meal_path(meal), method: :patch %></li>
+      <li class="daily_meal"><%= button_to 'Finish meal', meal_path(meal), method: :patch %></li>
     <% end %>
   </ul>
 </div>
