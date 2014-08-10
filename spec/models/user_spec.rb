@@ -199,12 +199,21 @@ describe User do
   end
 
   describe '#nutrition_composite' do
-    it 'returns the percent of total meals completed' do
-      user = create(:user)
-      create(:meal, status: 'complete', user: user)
-      create(:meal, status: 'incomplete', user: user)
+    context 'given zero meals' do
+      it 'returns 0' do
+        user = create(:user)
 
-      expect(user.nutrition_composite).to eq 0.5
+        expect(user.nutrition_composite).to eq 0
+      end
+    end
+    context 'given two meals' do
+      it 'returns the percent of total meals completed' do
+        user = create(:user)
+        create(:meal, status: 'complete', user: user)
+        create(:meal, status: 'incomplete', user: user)
+
+        expect(user.nutrition_composite).to eq 0.5
+      end
     end
   end
 

@@ -149,7 +149,7 @@ class User < ActiveRecord::Base
   end
 
   def nutrition_composite
-    complete_meals.to_f / total_meals.to_f
+    total_meals == 0 ? 0 : complete_meals.to_f / total_meals.to_f
   end
 
   def sleep_composite

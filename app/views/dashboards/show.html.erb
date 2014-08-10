@@ -15,8 +15,12 @@
 
   <div class="nutrition">
     <%= current_user.nutrition_score %>
+    <div class="progress-bar-indication">
+      <span class="meter" style="width: <%= composite_percent(current_user) %>%">
+        <p class="nutrition_progress"><%= "#{composite_percent(current_user)}%" %></p>
+      </span>
+    </div>
   </div>
-
   <%= link_to 'Sync data', sessions_path %>
 
   <div class="meals">
