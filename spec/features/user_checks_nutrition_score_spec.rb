@@ -8,6 +8,7 @@ feature 'Check nutrition score' do
       visit dashboard_path(as: user)
 
       within('.nutrition') do
+        expect(page).to have_css('p.nutrition_progress')
         expect(page).to have_content 'A'
       end
     end

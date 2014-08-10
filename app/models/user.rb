@@ -149,17 +149,25 @@ class User < ActiveRecord::Base
   end
 
   def nutrition_composite
-    complete_meals.to_f / total_meals.to_f
+    total_meals == 0 ? 0 : complete_meals.to_f / total_meals.to_f
   end
 
   def sleep_composite
-    sleep_scores = sleep_sessions.map { |s| s.score }
-    sleep_scores.inject(0.0) { |sum, el| sum + el } / sleep_sessions.size
+    if sleep_sessions.count == 0
+      0
+    else
+      sleep_scores = sleep_sessions.map { |s| s.score }
+      sleep_scores.inject(0.0) { |sum, el| sum + el } / sleep_sessions.size
+    end
   end
 
   def movement_composite
-    total_steps = movement_sessions.map { |s| s.steps }
-    total_steps.inject(0.0) { |sum, el| sum + el } / movement_sessions.size
+    if movement_sessions.count == 0
+      0
+    else
+      total_steps = movement_sessions.map { |s| s.steps }
+      total_steps.inject(0.0) { |sum, el| sum + el } / movement_sessions.size
+    end
   end
 
   def total_meals

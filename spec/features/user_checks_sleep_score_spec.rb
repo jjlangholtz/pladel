@@ -7,6 +7,7 @@ feature 'Check sleep score' do
     visit dashboard_path(as: user)
 
     within('.sleep') do
+      expect(page).to have_css('p.sleep_progress')
       expect(page).to have_content 'A'
     end
   end
