@@ -137,7 +137,7 @@ describe User do
     context 'score < 2000' do
       it 'returns a letter grade F' do
         user = create(:user)
-        create(:movement_session, steps: 0, user: user)
+        create(:movement_session, steps: 1, user: user)
 
         expect(user.movement_score).to eq 'F'
       end
