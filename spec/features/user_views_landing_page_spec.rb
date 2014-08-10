@@ -33,4 +33,13 @@ feature 'User views landing page' do
 
     expect(page).to have_title 'Team'
   end
+
+  scenario 'they see static pages in navbar while signed in' do
+    visit root_path(as: create(:user))
+
+    within('nav') do
+      expect(page).to have_content 'About'
+      expect(page).to have_content 'Team'
+    end
+  end
 end
