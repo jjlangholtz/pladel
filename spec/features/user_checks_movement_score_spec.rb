@@ -7,6 +7,7 @@ feature 'Check movement score' do
     visit dashboard_path(as: user)
 
     within('.movement') do
+      expect(page).to have_css('p.movement_progress')
       expect(page).to have_content 'A'
     end
   end

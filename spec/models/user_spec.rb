@@ -74,16 +74,26 @@ describe User do
   end
 
   describe '#sleep_composite' do
-    it 'returns a composite of sleep session scores' do
-      user = create(:user)
-      create(:sleep_session, deep: 480, total: 480,
-                             times_woken: 0, user: user)
-      create(:sleep_session, deep: 480, total: 480,
-                             times_woken: 0, user: user)
+    context 'with zero sleep sessions' do
+      it 'returns 0' do
+        user = create(:user)
 
-      result = user.sleep_composite
+        expect(user.sleep_composite).to eq 0
+      end
+    end
 
-      expect(result).to eq 64
+    context 'given at least one sleep session' do
+      it 'returns a composite of sleep session scores' do
+        user = create(:user)
+        create(:sleep_session, deep: 480, total: 480,
+                              times_woken: 0, user: user)
+        create(:sleep_session, deep: 480, total: 480,
+                              times_woken: 0, user: user)
+
+        result = user.sleep_composite
+
+        expect(result).to eq 64
+      end
     end
   end
 
@@ -135,14 +145,24 @@ describe User do
   end
 
   describe '#movement_composite' do
-    it 'returns a composite of movement session scores' do
-      user = create(:user)
-      create(:movement_session, steps: 8000, user: user)
-      create(:movement_session, steps: 4000, timestamp: 'Yesterday', user: user)
+    context 'without any movement sessions' do
+      it 'returns zero' do
+        user = create(:user)
 
-      result = user.movement_composite
+        expect(user.movement_composite).to eq 0
+      end
+    end
 
-      expect(result).to eq 6000
+    context 'given at least one movement session' do
+      it 'returns a composite of movement session scores' do
+        user = create(:user)
+        create(:movement_session, steps: 8000, user: user)
+        create(:movement_session, steps: 4000, timestamp: 'Yesterday', user: user)
+
+        result = user.movement_composite
+
+        expect(result).to eq 6000
+      end
     end
   end
 

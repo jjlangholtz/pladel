@@ -7,10 +7,20 @@
 
   <div class="sleep">
     <%= current_user.sleep_score %>
+    <div class="progress-bar-indication">
+      <span class="meter" style="width: <%= (current_user.sleep_composite / 0.30).round %>%">
+        <p class="sleep_progress"><%= "#{(current_user.sleep_composite / 0.30).round}%" %></p>
+      </span>
+    </div>
   </div>
 
   <div class="movement">
     <%= current_user.movement_score %>
+    <div class="progress-bar-indication">
+      <span class="meter" style="width: <%= (current_user.movement_composite / 100).round %>%">
+        <p class="movement_progress"><%= "#{(current_user.movement_composite / 100).round}%" %></p>
+      </span>
+    </div>
   </div>
 
   <div class="nutrition">
