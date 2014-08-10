@@ -42,15 +42,15 @@
   }
 
   .vertical-tab:focus {
-    outline: none; 
+    outline: none;
   }
 
   .vertical-tab-content-container {
     display: block;
     margin: 0 auto;
 
-    & a:focus { 
-      outline: none; 
+    & a:focus {
+      outline: none;
     }
 
     @include media($vertical-tab-mode) {
@@ -98,4 +98,3 @@
 }
 
 // Based on code by Jett Miller jettmiller.net
-
