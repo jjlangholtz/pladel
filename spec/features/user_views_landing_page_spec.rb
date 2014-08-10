@@ -17,7 +17,7 @@ feature 'User views landing page' do
     fill_in 'Password', with: 'password'
     click_button 'Sign in'
 
-    expect(page).to have_content 'Signed in as: user@example.com'
+    expect(page).to have_content 'Dashboard'
     expect(page).to have_title 'Dashboard'
     expect(page).not_to have_link 'Sign in'
   end
