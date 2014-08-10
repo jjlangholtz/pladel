@@ -1,0 +1,37 @@
+#first {
+  margin-top: 100px;
+}
+
+.bio {
+  @include span-columns(9);
+  @include shift(1);
+  color: white;
+  font-size: .9em;
+  padding: 10px;
+  font-size: .7em;
+  p span {
+    color: #75c9bc;
+  }
+  @media screen and (min-width: 700px) {
+    font-size: 1.2em;
+    }
+
+  img {
+    @include span-columns(4 of 12);
+    border-radius: 50%;
+    @media screen and (min-width: 700px) {
+    @include span-columns(3 of 12);
+    }
+  }
+}
+
+.socialLinks {
+  display: inline-block;
+  img {
+  width: 22px;
+  margin-left: 6px;
+  @media screen and (min-width: 700px) {
+    width: 40px;
+    }
+  }
+}
