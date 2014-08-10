@@ -1,25 +1,29 @@
 <% provide(:title, 'Dashboard') %>
 
-<div class="health">
-  <%= current_user.health_gpa %>
-</div>
+<div class="dashboard">
+  <div class="health">
+    <%= current_user.health_gpa %>
+  </div>
 
-<div class="sleep">
-  <%= current_user.sleep_score %>
-</div>
+  <div class="sleep">
+    <%= current_user.sleep_score %>
+  </div>
 
-<div class="movement">
-  <%= current_user.movement_score %>
-</div>
+  <div class="movement">
+    <%= current_user.movement_score %>
+  </div>
 
-<div class="nutrition">
-  <%= current_user.nutrition_score %>
-</div>
+  <div class="nutrition">
+    <%= current_user.nutrition_score %>
+  </div>
 
-<div class="meals">
-  <ul>
-    <% current_user.active_meals.each do |meal| %>
-      <li class="daily_meal"><%= button_to "Finish meal", meal_path(meal), method: :patch %></li>
-    <% end %>
-  </ul>
+  <%= link_to 'Sync data', sessions_path %>
+
+  <div class="meals">
+    <ul>
+      <% current_user.active_meals.each do |meal| %>
+        <li class="daily_meal"><%= button_to 'Finish meal', meal_path(meal), method: :patch %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

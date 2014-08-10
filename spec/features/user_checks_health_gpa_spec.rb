@@ -28,4 +28,13 @@ feature 'Check health GPA' do
       end
     end
   end
+
+  scenario 'does not see static page links in nav' do
+    visit dashboard_path(as: create(:user))
+
+    within('nav') do
+      expect(page).not_to have_content 'About'
+      expect(page).not_to have_content 'Team'
+    end
+  end
 end

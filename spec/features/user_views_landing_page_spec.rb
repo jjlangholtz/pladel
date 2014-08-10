@@ -17,7 +17,7 @@ feature 'User views landing page' do
     fill_in 'Password', with: 'password'
     click_button 'Sign in'
 
-    expect(page).to have_content 'Signed in as: user@example.com'
+    expect(page).to have_content 'Dashboard'
     expect(page).to have_title 'Dashboard'
     expect(page).not_to have_link 'Sign in'
   end
@@ -32,5 +32,14 @@ feature 'User views landing page' do
     click_link 'Team'
 
     expect(page).to have_title 'Team'
+  end
+
+  scenario 'they see static pages in navbar while signed in' do
+    visit root_path(as: create(:user))
+
+    within('nav') do
+      expect(page).to have_content 'About'
+      expect(page).to have_content 'Team'
+    end
   end
 end
