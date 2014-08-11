@@ -1,3 +1,10 @@
+nav a.navLink {
+  @media screen and (max-width: 450px) {
+  font-size: 0.7em;
+  margin: 25px 4px;
+  }
+}
+
 .dashboard {
   margin-top: 100px;
 

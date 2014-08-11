@@ -1,31 +1,31 @@
 <% provide(:title, 'Settings') %>
 
 <%= form_for current_user, url: user_path(current_user), method: :patch do |f| %>
-  <div>
+  <div class="vegetable">
     <%= f.collection_check_boxes :food_ids, Food.vegetables, :id, :name %>
   </div>
 
-  <div>
+  <div class="fish">
     <%= f.collection_check_boxes :food_ids, Food.fish, :id, :name %>
   </div>
 
-  <div>
+  <div class="meat">
     <%= f.collection_check_boxes :food_ids, Food.meat, :id, :name %>
   </div>
 
-  <div>
+  <div class="nut">
     <%= f.collection_check_boxes :food_ids, Food.nuts, :id, :name %>
   </div>
 
-  <div>
+  <div class="fat">
     <%= f.collection_check_boxes :food_ids, Food.fats, :id, :name %>
   </div>
 
-  <div>
+  <div class="fruit">
     <%= f.collection_check_boxes :food_ids, Food.fruits, :id, :name %>
   </div>
 
-  <div>
+  <div class="spice">
     <%= f.collection_check_boxes :food_ids, Food.spices, :id, :name %>
   </div>
   <%= f.label :meals_per_day, 'How many meals do you eat per day?' %>
