@@ -28,7 +28,5 @@
   <div class="spice">
     <%= f.collection_check_boxes :food_ids, Food.spices, :id, :name %>
   </div>
-  <%= f.label :meals_per_day, 'How many meals do you eat per day?' %>
-  <%= f.number_field :meals_per_day %>
   <%= f.submit 'Save Preferences' %>
 <% end %>
