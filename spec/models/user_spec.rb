@@ -88,7 +88,7 @@ describe User do
         create(:sleep_session, deep: 480, total: 480,
                               times_woken: 0, user: user)
         create(:sleep_session, deep: 480, total: 480,
-                              times_woken: 0, user: user)
+                              times_woken: 0, timestamp: 'Yesterday', user: user)
 
         result = user.sleep_composite
 

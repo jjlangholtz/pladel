@@ -3,5 +3,6 @@ FactoryGirl.define do
     deep 480
     times_woken 0
     total 480
+    timestamp 'Now'
   end
 end

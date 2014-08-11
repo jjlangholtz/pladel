@@ -9,6 +9,10 @@ describe SleepSession do
     is_expected.to belong_to(:user)
   end
 
+  it 'has a unique timestamp' do
+    is_expected.to validate_uniqueness_of(:timestamp).scoped_to(:user_id)
+  end
+
   describe '#score' do
     context 'given a perfect sleep session' do
       it 'returns a score for the sleep session' do

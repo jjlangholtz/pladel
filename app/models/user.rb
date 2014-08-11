@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
       sleep_sessions.each do |s|
         self.sleep_sessions.create(total: s["total_sleep"],
                                   times_woken: s["times_woken"],
-                                  deep: s["deep"])
+                                  deep: s["deep"],
+                                  timestamp: s["timestamp"])
       end
     end
   end
