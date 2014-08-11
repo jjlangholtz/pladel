@@ -181,11 +181,11 @@ class User < ActiveRecord::Base
   end
 
   def active_meals
-    Meal.where(status: 'active', user: self.id)
+    Meal.where(active: true, user: self.id)
   end
 
   def create_active_meals(count)
-    count.times { meals.create!(status: 'active') }
+    count.times { meals.create!}
   end
 
   private

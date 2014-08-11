@@ -260,8 +260,8 @@ describe User do
   describe '#active_meals' do
     it 'returns an array of active meals' do
       user = create(:user)
-      active = create(:meal, status: 'active', user: user)
-      incomplete = create(:meal, status: 'incomplete', user: user)
+      active = create(:meal, active: true, user: user)
+      incomplete = create(:meal, active: false, user: user)
 
       expect(user.active_meals).to include(active)
       expect(user.active_meals).not_to include(incomplete)
