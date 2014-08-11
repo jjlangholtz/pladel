@@ -92,7 +92,7 @@ describe User do
 
         result = user.sleep_composite
 
-        expect(result).to eq 64
+        expect(result).to eq 30
       end
     end
   end

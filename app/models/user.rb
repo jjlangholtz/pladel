@@ -167,7 +167,8 @@ class User < ActiveRecord::Base
       0
     else
       total_steps = movement_sessions.map { |s| s.steps }
-      total_steps.inject(0.0) { |sum, el| sum + el } / movement_sessions.size
+      composite = total_steps.inject(0.0) { |sum, el| sum + el } / movement_sessions.size
+      composite >= 10000 ? 10000 : composite
     end
   end
 
