@@ -9,4 +9,10 @@ class MealsController < ApplicationController
     meal.update_attribute('status', 'complete')
     redirect_to dashboard_url
   end
+
+  def destroy
+    meal = Meal.find(params[:id])
+    meal.update_attribute('status', 'incomplete')
+    redirect_to dashboard_url
+  end
 end

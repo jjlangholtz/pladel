@@ -40,6 +40,7 @@
     <ul>
       <% current_user.active_meals.each do |meal| %>
         <li class="daily_meal"><%= button_to 'Finish meal', meal_path(meal), method: :patch %></li>
+        <li><%= button_to 'Did not finish', meal_path(meal), method: :delete %> </li>
       <% end %>
     </ul>
   </div>

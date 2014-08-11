@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   resources :users, controller: 'users', only: [:new, :create, :edit, :update]
   resources :foods, only: [:new, :create]
   resources :devices, only: :new
-  resources :meals, only: [:create, :update]
+  resources :meals, only: [:create, :update, :destroy]
   resources :sessions, only: :index
 end

@@ -19,4 +19,16 @@ feature 'User manages nutrition' do
       expect(page).to have_content 'A'
     end
   end
+
+  scenario 'and clicks to mark a meal incomplete' do
+    user = create(:user)
+    create(:meal, status: 'active', user: user)
+    visit dashboard_path(as: user)
+
+    click_button 'Did not finish'
+
+    within('.nutrition') do
+      expect(page).to have_content 'F'
+    end
+  end
 end
