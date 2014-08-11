@@ -98,14 +98,14 @@ class User < ActiveRecord::Base
   end
 
   def health_composite
-    nutrition = score_to_gpa
-    sleep = score_to_gpa
-    movement = score_to_gpa
+    nutrition = nutrition_score_to_gpa
+    sleep = sleep_score_to_gpa
+    movement = movement_score_to_gpa
     (nutrition + sleep + movement) / 3
   end
 
-  def score_to_gpa
-    case nutrition_score && sleep_score && movement_score
+  def nutrition_score_to_gpa
+    case nutrition_score
     when 'A'
       4.0
     when 'B'
@@ -119,35 +119,35 @@ class User < ActiveRecord::Base
     end
   end
 
-  # def sleep_score_to_gpa
-  #   case sleep_score
-  #   when 'A'
-  #     4.0
-  #   when 'B'
-  #     3.0
-  #   when 'C'
-  #     2.0
-  #   when 'D'
-  #     1.0
-  #   when 'F'
-  #     0.0
-  #   end
-  # end
-  #
-  # def movement_score_to_gpa
-  #   case movement_score
-  #   when 'A'
-  #     4.0
-  #   when 'B'
-  #     3.0
-  #   when 'C'
-  #     2.0
-  #   when 'D'
-  #     1.0
-  #   when 'F'
-  #     0.0
-  #   end
-  # end
+  def sleep_score_to_gpa
+    case sleep_score
+    when 'A'
+      4.0
+    when 'B'
+      3.0
+    when 'C'
+      2.0
+    when 'D'
+      1.0
+    when 'F'
+      0.0
+    end
+  end
+
+  def movement_score_to_gpa
+    case movement_score
+    when 'A'
+      4.0
+    when 'B'
+      3.0
+    when 'C'
+      2.0
+    when 'D'
+      1.0
+    when 'F'
+      0.0
+    end
+  end
 
   def nutrition_composite
     total_meals == 0 ? 0 : complete_meals.to_f / total_meals.to_f
