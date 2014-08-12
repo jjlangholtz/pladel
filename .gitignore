@@ -17,3 +17,6 @@
 
 # Environment
 .env
+
+# ctags
+tags

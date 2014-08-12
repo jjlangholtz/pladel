@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809160925) do
+ActiveRecord::Schema.define(version: 20140811225506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,25 +27,33 @@ ActiveRecord::Schema.define(version: 20140809160925) do
   end
 
   create_table "meals", force: true do |t|
-    t.string  "status"
-    t.integer "user_id"
+    t.string   "status"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "active",     default: true
   end
 
   add_index "meals", ["user_id"], name: "index_meals_on_user_id", using: :btree
 
   create_table "movement_sessions", force: true do |t|
-    t.integer "user_id"
-    t.float   "steps"
-    t.string  "timestamp"
+    t.integer  "user_id"
+    t.float    "steps"
+    t.string   "timestamp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "movement_sessions", ["user_id"], name: "index_movement_sessions_on_user_id", using: :btree
 
   create_table "sleep_sessions", force: true do |t|
-    t.integer "deep"
-    t.integer "times_woken"
-    t.integer "total"
-    t.integer "user_id"
+    t.integer  "deep"
+    t.integer  "times_woken"
+    t.integer  "total"
+    t.integer  "user_id"
+    t.string   "timestamp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "sleep_sessions", ["user_id"], name: "index_sleep_sessions_on_user_id", using: :btree
@@ -60,7 +68,6 @@ ActiveRecord::Schema.define(version: 20140809160925) do
     t.string   "uid"
     t.string   "token"
     t.string   "pid"
-    t.integer  "meals_per_day"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

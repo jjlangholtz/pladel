@@ -9,12 +9,16 @@ describe SleepSession do
     is_expected.to belong_to(:user)
   end
 
+  it 'has a unique timestamp' do
+    is_expected.to validate_uniqueness_of(:timestamp).scoped_to(:user_id)
+  end
+
   describe '#score' do
-    context 'given a perfect sleep session' do
-      it 'returns a score for the sleep session' do
+    context 'when calculated score is over 30' do
+      it 'returns 30' do
         sleep_session = create(:sleep_session, deep: 480, total: 480, times_woken: 0)
 
-        expect(sleep_session.score).to eq 64
+        expect(sleep_session.score).to eq 30
       end
     end
 

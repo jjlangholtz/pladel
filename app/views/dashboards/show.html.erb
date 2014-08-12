@@ -9,7 +9,7 @@
     <%= current_user.sleep_score %>
     <div class="progress-bar-indication">
       <span class="meter" style="width: <%= (current_user.sleep_composite / 0.30).round %>%">
-        <p class="sleep_progress"><%= "#{(current_user.sleep_composite / 0.30).round}%" %></p>
+        <p class="sleep_progress">Sleep <span class="percent"><%= "#{(current_user.sleep_composite / 0.30).round}%" %></span></p>
       </span>
     </div>
   </div>
@@ -18,7 +18,7 @@
     <%= current_user.movement_score %>
     <div class="progress-bar-indication">
       <span class="meter" style="width: <%= (current_user.movement_composite / 100).round %>%">
-        <p class="movement_progress"><%= "#{(current_user.movement_composite / 100).round}%" %></p>
+        <p class="movement_progress">Movement <span class="percent"><%= "#{(current_user.movement_composite / 100).round}%" %></span></p>
       </span>
     </div>
   </div>
@@ -27,16 +27,20 @@
     <%= current_user.nutrition_score %>
     <div class="progress-bar-indication">
       <span class="meter" style="width: <%= composite_percent(current_user) %>%">
-        <p class="nutrition_progress"><%= "#{composite_percent(current_user)}%" %></p>
+        <p class="nutrition_progress">Nutrition <span class="percent"><%= "#{composite_percent(current_user)}%" %></span></p>
       </span>
     </div>
   </div>
+
   <%= link_to 'Sync data', sessions_path %>
 
   <div class="meals">
     <ul>
       <% current_user.active_meals.each do |meal| %>
-        <li class="daily_meal"><%= button_to 'Finish meal', meal_path(meal), method: :patch %></li>
+        <div class="daily_meal">
+          <li><%= button_to "Finish meal", meal_path(meal), method: :patch %></li>
+          <li><%= button_to 'Did not finish', meal_path(meal), method: :delete %> </li>
+        </div>
       <% end %>
     </ul>
   </div>
