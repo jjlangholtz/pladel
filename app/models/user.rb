@@ -181,7 +181,7 @@ class User < ActiveRecord::Base
   end
 
   def active_meals
-    Meal.where(active: true, user: self.id)
+    Meal.where(active: true, user: self.id).limit(3).reverse_order
   end
 
   def create_active_meals(count)

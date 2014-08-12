@@ -34,13 +34,13 @@
 
   <%= link_to 'Sync data', sessions_path %>
 
-  <%= button_to 'Add meal', meals_path %>
-
   <div class="meals">
     <ul>
       <% current_user.active_meals.each do |meal| %>
-        <li class="daily_meal"><%= button_to 'Finish meal', meal_path(meal), method: :patch %></li>
-        <li><%= button_to 'Did not finish', meal_path(meal), method: :delete %> </li>
+        <div class="daily_meal">
+          <li><%= button_to "Finish meal #{meal.id}", meal_path(meal), method: :patch %></li>
+          <li><%= button_to 'Did not finish', meal_path(meal), method: :delete %> </li>
+        </div>
       <% end %>
     </ul>
   </div>
