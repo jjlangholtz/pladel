@@ -11,12 +11,12 @@ feature 'User manages nutrition' do
 
   scenario 'and adds a new meal by completing a previous meal' do
     user = create(:user)
-    user.create_active_meals(3)
+    user.create_active_meals(1)
     visit dashboard_path(as: user)
 
-    click_button 'Finish meal 3'
+    click_button 'Finish meal'
 
-    expect(page).to have_css('.daily_meal', count: 3)
+    expect(page).to have_css('.daily_meal', count: 2)
   end
 
   scenario 'and sees a maximum of three meals' do
