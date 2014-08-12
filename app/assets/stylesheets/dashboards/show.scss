@@ -63,3 +63,41 @@ nav a.navLink {
     }
   }
 }
+
+.dashboard {
+  .daily_meal {
+    display: inline-block;
+    float: left;
+    width: 20%;
+    #checkButton input{
+      background-color: #2ecc71;
+    }
+    #xButton input{
+      background-color: #e74c3c;
+    }
+
+    li {
+      width: 25%;
+      float: left;
+      display: block;
+      position: relative;
+      left: 47px;
+    }
+  }
+  img {
+    width: 200px;
+    opacity: 0.8;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
