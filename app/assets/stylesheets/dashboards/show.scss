@@ -9,6 +9,10 @@ nav a.navLink {
   float: right;
 }
 
+.letter {
+  display: inline-block;
+}
+
 .dashboard {
   margin-top: 100px;
 
@@ -28,6 +32,7 @@ nav a.navLink {
     border-radius: $base-border-radius;
     margin: 0 auto;
     width: 50%;
+    display: inline-block;
 
     > span.meter {
       @include box-sizing(border-box);
