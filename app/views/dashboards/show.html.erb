@@ -36,6 +36,7 @@
   <%= link_to 'Sync data', sessions_path %>
 
   <div class="meals">
+    <p>Did you eat "Primal" today?</p>
       <% current_user.active_meals.each do |meal| %>
         <div class="daily_meal">
           <img src="http://i.imgur.com/HWk1OSI.png">
