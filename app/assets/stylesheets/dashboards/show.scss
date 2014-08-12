@@ -64,29 +64,58 @@ nav a.navLink {
   }
 }
 
+.meals {
+  padding-top: 75px;
+}
+
 .dashboard {
   .daily_meal {
+    width: 33%;
     display: inline-block;
     float: left;
-    width: 20%;
-    #checkButton input{
+    width: 33%;
+    text-align: center;
+    #checkButton {
+      position: relative;
+      left: 38%;
       background-color: #2ecc71;
+      border-radius: 5px;
+      
+      a {
+        padding: 5px 15px;
+        color: white;
+      }
     }
-    #xButton input{
+    #xButton {
       background-color: #e74c3c;
+      border-radius: 5px;
+      position: relative;
+      left: 40%;
+
+      a {
+        padding: 5px 15px;
+        color: white;
+      }
     }
 
     li {
-      width: 25%;
+      width: 50px;
+      // width: 33%;
       float: left;
       display: block;
-      position: relative;
-      left: 47px;
+      // position: relative;
+      // left: 47px;
     }
   }
   img {
+    opacity: .8;
+    display: block;
     width: 200px;
-    opacity: 0.8;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: solid black 2px;
   }
 }
 
