@@ -5,12 +5,21 @@ nav a.navLink {
   }
 }
 
-.percent {
-  float: right;
-}
-
 .dashboard {
   margin-top: 100px;
+  text-align: center;
+
+  .percent {
+    float: right;
+  }
+
+  .letter {
+    display: inline-block;
+    color: white;
+    font-weight: 700;
+    font-size: 1.85em;
+    margin-left: 18px;
+  }
 
   .progress-bar-indication {
     $progress-border-color: $base-border-color;
@@ -28,6 +37,7 @@ nav a.navLink {
     border-radius: $base-border-radius;
     margin: 0 auto;
     width: 50%;
+    display: inline-block;
 
     > span.meter {
       @include box-sizing(border-box);
@@ -49,6 +59,7 @@ nav a.navLink {
       font-weight: 800;
       color: $progress-color;
       text-shadow: 0 0 1px black;
+      text-align: left;
     }
   }
 }
