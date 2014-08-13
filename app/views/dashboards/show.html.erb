@@ -1,9 +1,9 @@
 <% provide(:title, 'Dashboard') %>
 
 <div class="dashboard">
-  <input type="text" value="75" class="dial">
+  <input type="text"  class="dial" data-fgColor="#75C9BC" data-skin="tron">
   <div class="health">
-    <div class="letter">Health GPA: <%= current_user.health_gpa %></div>
+    <div class="letter overall"><%= current_user.health_gpa %></div>
   </div>
 
   <div class="sleep">
@@ -36,13 +36,13 @@
   <%= link_to 'Sync data', sessions_path %>
 
   <div class="meals">
-    <ul>
+    <p>Did you eat "Primal" today?</p>
       <% current_user.active_meals.each do |meal| %>
         <div class="daily_meal">
-          <li><%= button_to "Finish meal", meal_path(meal), method: :patch %></li>
-          <li><%= button_to 'Did not finish', meal_path(meal), method: :delete %> </li>
+          <img src="http://i.imgur.com/HWk1OSI.png">
+          <li id="checkButton"><%= link_to "✓", meal_path(meal), method: :patch %></li>
+          <li id="xButton"><%= link_to 'X', meal_path(meal), method: :delete %> </li>
         </div>
       <% end %>
-    </ul>
   </div>
 </div>

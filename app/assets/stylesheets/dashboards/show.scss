@@ -6,7 +6,7 @@ nav a.navLink {
 }
 
 .dashboard {
-  margin-top: 100px;
+  margin-top: 70px;
   text-align: center;
 
   .percent {
@@ -15,10 +15,22 @@ nav a.navLink {
 
   .letter {
     display: inline-block;
-    color: white;
+    color: #75C9BC;
     font-weight: 700;
     font-size: 1.85em;
     margin-left: 18px;
+  }
+
+  .overall {
+    position: relative;
+    bottom: 166px;
+    margin-left: 0;
+    font-size: 5em;
+    color: #75C9BC;
+  }
+
+  .health {
+    height: 10px;
   }
 
   .progress-bar-indication {
@@ -41,7 +53,7 @@ nav a.navLink {
 
     > span.meter {
       @include box-sizing(border-box);
-      background-color: $progress-meter-color;
+      background-color: #75C9BC;
       background-size: 40px 40px;
       background-repeat: repeat-x;
       border: $progress-meter-border;
@@ -63,3 +75,80 @@ nav a.navLink {
     }
   }
 }
+
+
+
+// Meals section
+.meals {
+  padding-top: 15px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  p {
+  text-align: center;
+  font-size: 2em;
+}
+}
+
+.dashboard {
+  .daily_meal {
+    width: 33%;
+    display: inline-block;
+    float: left;
+    width: 33%;
+    text-align: center;
+    #checkButton {
+      position: relative;
+      left: 33%;
+      background-color: #2ecc71;
+      border-radius: 5px;
+      
+      a {
+        padding: 5px 15px;
+        color: white;
+      }
+    }
+    #xButton {
+      background-color: #e74c3c;
+      border-radius: 5px;
+      position: relative;
+      left: 40%;
+
+      a {
+        padding: 5px 15px;
+        color: white;
+      }
+    }
+
+    li {
+      width: 50px;
+      // width: 33%;
+      float: left;
+      display: block;
+      // position: relative;
+      // left: 47px;
+    }
+  }
+  img {
+    opacity: .6;
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: solid black 2px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
