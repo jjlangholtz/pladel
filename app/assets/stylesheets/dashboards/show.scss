@@ -6,8 +6,10 @@ nav a.navLink {
 }
 
 .dashboard {
-  margin-top: 70px;
+  padding-top: 80px;
   text-align: center;
+  background-color: white;
+  height: 750px;
 
   .percent {
     float: right;
@@ -84,10 +86,7 @@ nav a.navLink {
   width: 75%;
   margin-left: auto;
   margin-right: auto;
-  p {
-  text-align: center;
-  font-size: 2em;
-}
+
 }
 
 .dashboard {
@@ -130,7 +129,7 @@ nav a.navLink {
     }
   }
   img {
-    opacity: .6;
+    opacity: .8;
     display: block;
     width: 200px;
     margin-left: auto;
