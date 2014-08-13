@@ -1,9 +1,9 @@
 <% provide(:title, 'Dashboard') %>
 
 <div class="dashboard">
-  <input type="text" value="75" class="dial">
+  <input type="text" value="75" class="dial" data-fgColor="#75C9BC" data-skin="tron">
   <div class="health">
-    <div class="letter">Health GPA: <%= current_user.health_gpa %></div>
+    <div class="letter overall"><%= current_user.health_gpa %></div>
   </div>
 
   <div class="sleep">
