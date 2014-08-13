@@ -14,7 +14,7 @@ feature 'User manages nutrition' do
     user.create_active_meals(1)
     visit dashboard_path(as: user)
 
-    click_button 'Finish meal'
+    click_link '✓'
 
     expect(page).to have_css('.daily_meal', count: 2)
   end
@@ -32,7 +32,7 @@ feature 'User manages nutrition' do
     create(:meal, status: 'active', user: user)
     visit dashboard_path(as: user)
 
-    click_button 'Finish meal'
+    click_link '✓'
 
     within('.nutrition') do
       expect(page).to have_content 'A'
@@ -44,7 +44,7 @@ feature 'User manages nutrition' do
     create(:meal, status: 'active', user: user)
     visit dashboard_path(as: user)
 
-    click_button 'Did not finish'
+    click_link 'X'
 
     within('.nutrition') do
       expect(page).to have_content 'F'
