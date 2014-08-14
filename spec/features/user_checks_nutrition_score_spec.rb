@@ -13,16 +13,4 @@ feature 'Check nutrition score' do
       end
     end
   end
-
-  context 'with poor nutrition' do
-    scenario 'and sees F' do
-      user = create(:user)
-      create(:meal, status: 'incomplete', user: user)
-      visit dashboard_path(as: user)
-
-      within('.nutrition') do
-        expect(page).to have_content 'F'
-      end
-    end
-  end
 end

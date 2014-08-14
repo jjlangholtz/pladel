@@ -39,8 +39,9 @@ feature 'User manages nutrition' do
     end
   end
 
-  scenario 'and clicks to mark a meal incomplete' do
+  pending 'and clicks to mark a meal incomplete' do
     user = create(:user)
+    create(:meal, status: 'active', user: user)
     create(:meal, status: 'active', user: user)
     visit dashboard_path(as: user)
 

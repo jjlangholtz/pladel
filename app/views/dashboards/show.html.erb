@@ -7,7 +7,7 @@
     <div class="letter overall"><%= current_user.health_gpa %></div>
   </div>
 
-  <% unless (current_user.sleep_composite / 0.30).round %>
+  <% unless (current_user.sleep_composite / 0.30).round == 0 %>
     <div class="sleep animated fadeInLeft">
       <div class="progress-bar-indication">
         <span class="meter" style="width: <%= (current_user.sleep_composite / 0.30).round %>%">
@@ -18,7 +18,7 @@
     </div>
   <% end %>
 
-  <% unless (current_user.movement_composite / 100).round %>
+  <% unless (current_user.movement_composite / 100).round == 0 %>
     <div class="movement animated fadeInLeft">
       <div class="progress-bar-indication">
         <span class="meter" style="width: <%= (current_user.movement_composite / 100).round %>%">
