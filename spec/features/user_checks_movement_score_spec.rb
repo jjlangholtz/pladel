@@ -4,6 +4,8 @@ feature 'Check movement score' do
   scenario 'Visits dashboard and sees grade' do
     user = create(:user)
     create(:movement_session, steps: 20000, user: user)
+    create(:meal, user: user)
+
     visit dashboard_path(as: user)
 
     within('.movement') do

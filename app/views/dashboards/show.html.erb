@@ -46,9 +46,11 @@
       <% current_user.active_meals.each do |meal| %>
         <div class="daily_meal">
           <img src="http://i.imgur.com/HWk1OSI.png">
-          <li id="checkButton"><%= link_to "✓", meal_path(meal), method: :patch %></li>
-          <li id="xButton"><%= link_to 'X', meal_path(meal), method: :delete %> </li>
         </div>
       <% end %>
+      <div>
+        <li id="checkButton"><%= link_to "✓", meal_path(current_user.active_meals.last), method: :patch %></li>
+        <li id="xButton"><%= link_to 'X', meal_path(current_user.active_meals.last), method: :delete %> </li>
+      </div>
   </div>
 </div>

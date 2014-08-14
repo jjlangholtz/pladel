@@ -12,15 +12,6 @@ feature 'User signs up for an account' do
     fill_in 'Password', with: 'password'
     click_button 'Sign up!'
 
-    expect(page).to have_title 'Food Preferences'
-
-    check 'apple'
-    click_button 'Save Preferences'
-
-    expect(page).to have_title 'Devices'
-
-    click_link 'Continue'
-
     expect(page).to have_title 'Dashboard'
   end
 end

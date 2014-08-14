@@ -4,7 +4,7 @@ class UsersController < Clearance::UsersController
 
     if @user.save
       sign_in @user
-      @user.create_active_meals(3)
+      @user.create_active_meals(1)
       redirect_back_or url_after_create
     else
       render template: 'users/new'
@@ -26,6 +26,6 @@ class UsersController < Clearance::UsersController
   private
 
   def url_after_create
-    new_food_path
+    dashboard_path
   end
 end

@@ -8,7 +8,8 @@ feature 'User views landing page' do
   end
 
   scenario 'they can sign-in and view a dashboard' do
-    create(:user, email: 'user@example.com', password: 'password')
+    user = create(:user, email: 'user@example.com', password: 'password')
+    create(:meal, user: user)
 
     visit root_path
     click_link 'Sign in'
