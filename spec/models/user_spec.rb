@@ -63,10 +63,10 @@ describe User do
     end
 
     context 'score < 4' do
-      it 'returns a letter grade F' do
+      pending 'returns a letter grade F' do
         user = create(:user)
-        create(:sleep_session, deep: 0, total: 0,
-                               times_woken: 10, user: user)
+        create(:sleep_session, deep: 150, total: 300,
+                               times_woken: 2, user: user)
 
         expect(user.sleep_score).to eq 'F'
       end
