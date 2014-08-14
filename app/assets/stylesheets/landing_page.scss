@@ -46,7 +46,9 @@
 }
 
 .devices {
-  background-color: white;
+  background: url(http://i.imgur.com/CE4IEkL.png) no-repeat 50% 50%;
+  background-size: cover;
+  // background-color: white;
   // border: solid  black 2px;
   height: 175px;
   text-align: center;
@@ -63,7 +65,7 @@
 .deviceContainer {
   display: inline-block;
   width: 21%;
-  opacity: .7;
+  opacity: .8;
 
     // position: relative;
     // top: 10px;
@@ -144,6 +146,31 @@
       width: 120px;
     }
     }
+  }
+}
+
+.responsive {
+  background: url(http://i.imgur.com/CE4IEkL.png) no-repeat 50% 50%;
+  background-size: cover;
+  height: 250px;
+  text-align: center;
+  @media screen and (min-width: 700px) {
+      height: 400px;
+    }
+  img {
+    width: 320px;
+    @media screen and (min-width: 700px) {
+      width: 550px;
+    }
+  }
+  p {
+    padding-top: 10px;
+    color: white;
+    @media screen and (min-width: 700px) {
+      font-size: 2em;
+      margin-bottom: 0;
+    }
+
   }
 }
 
