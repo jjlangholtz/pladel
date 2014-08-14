@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 feature 'User manages nutrition' do
-  scenario 'and a new user sees three active meals on dashboard' do
+  scenario 'and a new user sees one active meals on dashboard' do
     user = create(:user)
-    user.create_active_meals(3)
+    user.create_active_meals(1)
     visit dashboard_path(as: user)
 
-    expect(page).to have_css('.daily_meal', count: 3)
+    expect(page).to have_css('.daily_meal', count: 1)
   end
 
   scenario 'and adds a new meal by completing a previous meal' do
