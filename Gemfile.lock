@@ -29,6 +29,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    animate-rails (1.0.7)
+      rails
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     better_errors (1.1.0)
@@ -131,7 +133,6 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.4)
       sprockets-rails (~> 2.0)
-    rails-assets-animate.css (3.2.0)
     rails-assets-jquery (2.1.1)
     rails-assets-jquery-knob (1.2.9)
       rails-assets-jquery (>= 1.7.0)
@@ -224,6 +225,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  animate-rails
   better_errors
   binding_of_caller
   bitters
@@ -240,7 +242,6 @@ DEPENDENCIES
   pg
   pry-rails
   rails (= 4.1.4)
-  rails-assets-animate.css
   rails-assets-jquery-knob
   rails_12factor
   rspec-rails (~> 3.0.2)

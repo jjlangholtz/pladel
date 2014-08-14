@@ -7,7 +7,7 @@
     <div class="letter overall"><%= current_user.health_gpa %></div>
   </div>
 
-  <div class="sleep">
+  <div class="sleep animated fadeInLeft">
     <div class="progress-bar-indication">
       <span class="meter" style="width: <%= (current_user.sleep_composite / 0.30).round %>%">
         <p class="sleep_progress">Sleep <span class="percent"><%= "#{(current_user.sleep_composite / 0.30).round}%" %></span></p>
@@ -16,7 +16,7 @@
     <div class="letter"><%= current_user.sleep_score %></div>
   </div>
 
-  <div class="movement">
+  <div class="movement animated fadeInLeft">
     <div class="progress-bar-indication">
       <span class="meter" style="width: <%= (current_user.movement_composite / 100).round %>%">
         <p class="movement_progress">Movement <span class="percent"><%= "#{(current_user.movement_composite / 100).round}%" %></span></p>
@@ -25,7 +25,7 @@
     <div class="letter"><%= current_user.movement_score %></div>
   </div>
 
-  <div class="nutrition">
+  <div class="nutrition animated fadeInLeft">
     <div class="progress-bar-indication">
       <span class="meter" style="width: <%= composite_percent(current_user) %>%">
         <p class="nutrition_progress">Nutrition <span class="percent"><%= "#{composite_percent(current_user)}%" %></span></p>

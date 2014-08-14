@@ -3,9 +3,7 @@
   <div class="modal-window">
     <div class="modal-inner">
       <label class="modal-close" for="modal-1"></label>
-      <h1>Food Preferences</h1>
-      <p class="intro"></p>
-      <p class="body"></p>
+      <%= link_to 'Register Devices', "https://app.validic.com/#{ENV["VALIDIC_ORGANIZATION_ID"]}/#{current_user.token}", target: '_blank' %>
     </div>
   </div>
 </div>

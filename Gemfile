@@ -3,6 +3,7 @@ source 'https://rails-assets.org'
 
 ruby '2.1.2'
 
+gem 'animate-rails'
 gem 'bitters'
 gem 'bourbon'
 gem 'clearance'
@@ -12,7 +13,6 @@ gem 'jquery-rails'
 gem 'neat'
 gem 'pg'
 gem 'rails', '4.1.4'
-gem 'rails-assets-animate.css'
 gem 'rails-assets-jquery-knob'
 gem 'sass-rails', '~> 4.0.3'
 gem 'sdoc', '~> 0.4.0',          group: :doc
