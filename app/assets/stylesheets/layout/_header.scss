@@ -64,14 +64,12 @@ header {
 //navigation
 nav {
   height: 65px;
-  background-color: rgba(88, 88, 88, 1);
+  background-color: #585858;
+  // background-color: rgba(88, 88, 88, 1);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 11;
-  // -webkit-box-shadow: 0 10px 6px -6px #777;
-  //    -moz-box-shadow: 0 10px 6px -6px #777;
-  //         box-shadow: 0 10px 6px -6px #777;
 
   img {
     width: 40px;
