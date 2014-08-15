@@ -5,6 +5,13 @@ nav a.navLink {
   }
 }
 
+#fixedBG {
+  height: 200px;
+  background-color: #585858;
+  position: fixed;
+  z-index: -10;
+}
+
 .dashboard {
   padding-top: 80px;
   text-align: center;
