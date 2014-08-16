@@ -40,8 +40,11 @@
 
     p {
       margin-bottom: 0;
+      color: black;
+      text-shadow: none;
+      font-weight: normal;
     }
-    // 
+    //
     // &:after {
     //   @include position(absolute, 0 0 0 46%);
     //   margin-left: -$tooltip-arrow-width;
