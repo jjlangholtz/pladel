@@ -55,12 +55,12 @@
   <%= link_to 'Sync data', sessions_path %>
 
   <div class="meal buttons">
-    <%= link_to "✓", meal_path(current_user.active_meals.last), method: :patch, id: 'checkButton' %></li>
-    <%= link_to 'X', meal_path(current_user.active_meals.last), method: :delete, id: 'xButton' %> </li>
+    <%= link_to "✓", meal_path(current_user.meals.last), method: :patch, id: 'checkButton' %></li>
+    <%= link_to 'X', meal_path(current_user.meals.last), method: :delete, id: 'xButton' %> </li>
   </div>
   <div class="meals tooltip-item">
       <% current_user.active_meals.each do |meal| %>
-        <div class="daily_meal">
+        <div class="daily_meal <%= meal.status %>">
           <img src="http://i.imgur.com/HWk1OSI.png">
         </div>
         <div class="tooltip">
