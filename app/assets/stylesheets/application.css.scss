@@ -1,6 +1,7 @@
 @import 'bourbon';
 @import 'neat';
 @import 'base/base';
+@import 'animate';
 
 @import 'layout/layout';
 @import 'layout/header';
@@ -8,6 +9,7 @@
 @import 'landing_page';
 @import 'team';
 @import 'about';
+@import 'modal';
 @import 'users/form';
 @import 'passwords/create';
 @import 'dashboards/show';

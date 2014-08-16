@@ -30,7 +30,9 @@ feature 'Check health GPA' do
   end
 
   scenario 'does not see static page links in nav' do
-    visit dashboard_path(as: create(:user))
+    user = create(:user)
+    create(:meal, user: user)
+    visit dashboard_path(as: user)
 
     within('nav') do
       expect(page).not_to have_content 'About'

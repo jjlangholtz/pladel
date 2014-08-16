@@ -62,6 +62,8 @@ class User < ActiveRecord::Base
       'C'
     when nutrition_composite >= 0.5 && nutrition_composite < 0.6
       'D'
+    when nutrition_composite == 0
+      nil
     else
       'F'
     end
@@ -77,6 +79,8 @@ class User < ActiveRecord::Base
       'C'
     when sleep_composite >= 4 && sleep_composite < 10
       'D'
+    when sleep_composite == 0
+      nil
     else
       'F'
     end
@@ -92,6 +96,8 @@ class User < ActiveRecord::Base
       'C'
     when movement_composite >= 2000 && movement_composite < 4000
       'D'
+    when movement_composite == 0
+      nil
     else
       'F'
     end
@@ -101,7 +107,11 @@ class User < ActiveRecord::Base
     nutrition = nutrition_score_to_gpa
     sleep = sleep_score_to_gpa
     movement = movement_score_to_gpa
-    (nutrition + sleep + movement) / 3
+    ((nutrition || 0) + (sleep || 0) + (movement || 0)) / (count_active_activity == 0 ? 1 : count_active_activity)
+  end
+
+  def count_active_activity
+    [nutrition_score_to_gpa, sleep_score_to_gpa, movement_score_to_gpa].delete_if(&:nil?).count
   end
 
   def nutrition_score_to_gpa
@@ -116,6 +126,8 @@ class User < ActiveRecord::Base
       1.0
     when 'F'
       0.0
+    else
+      nil
     end
   end
 
@@ -131,6 +143,8 @@ class User < ActiveRecord::Base
       1.0
     when 'F'
       0.0
+    else
+      nil
     end
   end
 
@@ -146,6 +160,8 @@ class User < ActiveRecord::Base
       1.0
     when 'F'
       0.0
+    else
+      nil
     end
   end
 

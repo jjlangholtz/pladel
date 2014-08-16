@@ -1,0 +1,11 @@
+<div class="modal">
+  <input class="modal-state" id="modal-1" type="checkbox" />
+  <div class="modal-window">
+    <div class="modal-inner">
+      <label class="modal-close" for="modal-1"></label>
+      <h3>Settings</h3>
+      <%= link_to 'Register Applications', "https://app.validic.com/#{ENV["VALIDIC_ORGANIZATION_ID"]}/#{current_user.token}", target: '_blank' %>
+    </div>
+  </div>
+</div>
+
