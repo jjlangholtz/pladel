@@ -87,6 +87,13 @@ nav a.navLink {
   margin-left: auto;
   margin-right: auto;
 
+  .complete {
+    border: 1px solid green;
+  }
+
+  .incomplete {
+    border: 1px solid red;
+  }
 }
 
 .dashboard {

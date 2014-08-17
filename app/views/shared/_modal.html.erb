@@ -4,7 +4,14 @@
     <div class="modal-inner">
       <label class="modal-close" for="modal-1"></label>
       <h3>Settings</h3>
-      <%= link_to 'Register Applications', "https://app.validic.com/#{ENV["VALIDIC_ORGANIZATION_ID"]}/#{current_user.token}", target: '_blank' %>
+        <div>
+          <p>Click the following link to visit the App marketplace where you can register mobile health applications so that Pladel can automatically calculate your Health GPA from your sleep and movement.</p>
+        <%= link_to 'Register Applications', "https://app.validic.com/#{ENV["VALIDIC_ORGANIZATION_ID"]}/#{current_user.token}", target: '_blank' %>
+        </div>
+        <div>
+          <p>If you want to modify your food preferences to change your reommended recipes just follow the link below.</p>
+          <%= link_to 'Modify Food Preferences', new_food_path %>
+        </div>
     </div>
   </div>
 </div>
