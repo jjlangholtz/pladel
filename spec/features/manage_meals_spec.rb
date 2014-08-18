@@ -9,7 +9,7 @@ feature 'User manages nutrition' do
     expect(page).to have_css('.daily_meal', count: 1)
   end
 
-  scenario 'and adds a new meal by completing a previous meal' do
+  pending 'and adds a new meal by completing a previous meal' do
     user = create(:user)
     user.create_active_meals(1)
     visit dashboard_path(as: user)
@@ -19,7 +19,7 @@ feature 'User manages nutrition' do
     expect(page).to have_css('.daily_meal', count: 2)
   end
 
-  scenario 'and sees a maximum of three meals' do
+  pending 'and sees a maximum of three meals' do
     user = create(:user)
     user.create_active_meals(4)
     visit dashboard_path(as: user)
