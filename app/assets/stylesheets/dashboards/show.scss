@@ -1,8 +1,17 @@
+
+
 nav a.navLink {
   @media screen and (max-width: 450px) {
   font-size: 0.7em;
   margin: 25px 4px;
   }
+}
+
+#fixedBG {
+  height: 200px;
+  background-color: #585858;
+  position: fixed;
+  z-index: -10;
 }
 
 .dashboard {
@@ -15,21 +24,26 @@ nav a.navLink {
     float: right;
   }
 
-  .letter {
-    display: inline-block;
-    color: #75C9BC;
-    font-weight: 700;
-    font-size: 1.85em;
-    margin-left: 18px;
-  }
+// .overallGrade {
+//   font-size: 5em;
+// }
 
-  .overall {
-    position: relative;
-    bottom: 166px;
-    margin-left: 0;
-    font-size: 5em;
-    color: #75C9BC;
-  }
+  // .letter {
+  //   display: inline-block;
+  //   color: #75C9BC;
+  //   font-weight: 700;
+  //   font-size: 1.85em;
+  //   margin-left: 18px;
+  // }
+
+  // .overall {
+  //   position: relative;
+  //   bottom: 166px;
+  //   margin-left: 0;
+  //   font-size: 5em;
+  //   color: #75C9BC;
+  //   display: none;
+  // }
 
   .health {
     height: 10px;
@@ -78,6 +92,88 @@ nav a.navLink {
   }
 }
 
+.dials {
+  width: 300px;
+  display: block;
+  margin: auto;
+  @media screen and (min-width: 550px) {
+    width: 500px;
+  }  
+}
+
+.overallGrade {
+  position: absolute;
+  font-size: 9em;
+  left: 101px;
+  top: 37px;
+  color: #75C9BC;  
+
+  @media screen and (min-width: 550px) {
+    font-size: 16em;
+    left: 164px;
+    top: 50px;
+  }  
+}
+
+#smallOverallDial canvas {
+    @media screen and (min-width: 550px) {
+    display: none;
+    }
+}  
+
+#overallDial {
+  @media screen and (min-width: 550px) {
+  display: none;
+  }
+} 
+ 
+#overallDialLarge {
+  display: none;
+  @media screen and (min-width: 550px) {
+  display: inline;
+  }
+  .overallGradeLarge {
+    position: absolute;
+    top: 134px;
+    margin-left: 168px;
+    font-size: 15em;
+    color: #75C9BC;
+  }
+}  
+
+.smallDial {
+  display: inline-block;
+  float: left;
+  width: 33%;
+  position: relative;
+  p {
+    position: absolute;
+    bottom: 22px;
+    left: 37px; 
+    font-size: 2.4em;
+    color: #75C9BC;
+    @media screen and (min-width: 550px) {
+    left: 69px;
+    }
+  }
+}
+
+#movement {
+  bottom: 25px;
+}
+
+#nutrition {
+  animation-delay: .5s;
+  -webkit-animation-delay: .5s;
+  -moz-animation-delay: .5s;
+  bottom: 25px;
+}
+
+#sleep {
+  animation-delay: .25s;
+  -webkit-animation-delay: .25s;
+  -moz-animation-delay: .25s;
+}
 
 
 // Meals section
