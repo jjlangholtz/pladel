@@ -89,10 +89,12 @@ nav a.navLink {
 
   .complete {
     border: 1px solid green;
+    opacity: 0.5;
   }
 
   .incomplete {
     border: 1px solid red;
+    opacity: 0.5;
   }
 }
 
@@ -108,7 +110,7 @@ nav a.navLink {
       left: 33%;
       background-color: #2ecc71;
       border-radius: 5px;
-      
+
       a {
         padding: 5px 15px;
         color: white;
