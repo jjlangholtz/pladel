@@ -197,10 +197,8 @@ nav a.navLink {
 .dashboard {
   .daily_meal {
     width: 33%;
-    display: inline-block;
-    float: left;
-    width: 33%;
-    text-align: center;
+    margin: auto;
+
     #checkButton {
       position: relative;
       left: 33%;
@@ -244,15 +242,3 @@ nav a.navLink {
     border: solid black 2px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
