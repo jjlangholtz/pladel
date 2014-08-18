@@ -64,6 +64,11 @@
     <%= link_to "✓", meal_path(current_user.meals.last), method: :patch, id: 'checkButton' %></li>
     <%= link_to 'X', meal_path(current_user.meals.last), method: :delete, id: 'xButton' %> </li>
   </div>
+
+  <p>Meals logged: <%= current_user.meals.count - 1 %></p>
+  <p>Meals on diet: <%= current_user.meals.where(status: 'complete').count %></p>
+  <p>Meals off diet: <%= current_user.meals.where(status: 'incomplete').count %></p>
+
   <div class="meals tooltip-item">
       <% current_user.active_meals.each do |meal| %>
         <div class="daily_meal <%= meal.status %>">
