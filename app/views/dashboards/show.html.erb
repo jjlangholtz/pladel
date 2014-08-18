@@ -2,14 +2,24 @@
 <div id="fixedBG"></div>
 <div class="dashboard">
   <%= render 'shared/modal' %>
-  <input type="text" value="<%= ((current_user.sleep_composite / 0.3).round + (current_user.movement_composite / 100).round + composite_percent(current_user)) / health_gpa_percent_denominator(current_user) %>" class="dial" data-readOnly="true" data-fgColor="#75c9bc">
+  <!-- <input type="text" value="<%= ((current_user.sleep_composite / 0.3).round + (current_user.movement_composite / 100).round + composite_percent(current_user)) / health_gpa_percent_denominator(current_user) %>" class="dial" data-readOnly="true" data-fgColor="#75c9bc">
   <div class="health tooltip-item">
     <div class="tooltip">
       <p>Your Health GPA tells you how healthy you are overall. It shows daily, weekly and all time GPA based upon your sleep, movement and nutrition. You can toggle between daily, weekly, monthly and all time by clicking on the buttons below the chart.</p>
   </div>
 
     <div class="letter overall"><%= current_user.health_gpa %></div>
+  </div> -->
+
+  <div class="dataTime">
+    <a href="#">DAY</a>
+    <a href="#">WEEK</a>
+    <a href="#">MONTH</a>
+    <a href="#">YEAR</a>
   </div>
+
+  <div id="doughnutChart" class="chart"></div>
+  
 
   <% unless sleep_composite_empty?(current_user) %>
     <div class="sleep animated fadeInLeft">
@@ -87,3 +97,13 @@
     </div>
   </div>
 </div>
+
+  <script>
+$(function(){
+  $("#doughnutChart").drawDoughnutChart([
+    { title: "Overall GPA",         value : 100,  color: "#75C9BC" },
+    { title: "Room for improvement", value:  80,   color: "#585858" },
+
+  ]);
+});
+  </script>
