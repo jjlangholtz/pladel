@@ -62,9 +62,7 @@
 
 
   <p>
-    Meals logged: <%= current_user.meals.count - 1 %>,
-    Meals on diet: <%= current_user.meals.where(status: 'complete').count %>,
-    Meals off diet: <%= current_user.meals.where(status: 'incomplete').count %>
+    Meals logged: <span class="meal-logging"><%= current_user.meals.count - 1 %></span>
   </p>
 
   <div class="meals tooltip-item">
@@ -77,7 +75,7 @@
   </div>
 
   <div class="meal buttons">
-    <%= link_to "✓", meal_path(current_user.meals.last), method: :patch, id: 'checkButton' %></li>
-    <%= link_to 'X', meal_path(current_user.meals.last), method: :delete, id: 'xButton' %> </li>
+    <%= link_to "✓", meal_path(current_user.meals.last), method: :patch, id: 'checkButton', remote: true %></li>
+    <%= link_to 'X', meal_path(current_user.meals.last), method: :delete, id: 'xButton', remote: true %> </li>
   </div>
 </div>
