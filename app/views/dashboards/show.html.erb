@@ -60,18 +60,30 @@
 
   <%= link_to 'Sync data', sessions_path %>
 
-  <div class="meal buttons">
-    <%= link_to "✓", meal_path(current_user.meals.last), method: :patch, id: 'checkButton' %></li>
-    <%= link_to 'X', meal_path(current_user.meals.last), method: :delete, id: 'xButton' %> </li>
-  </div>
-  <div class="meals tooltip-item">
-      <% current_user.active_meals.each do |meal| %>
-        <div class="daily_meal <%= meal.status %>">
+
+  <p>
+    Meals logged: <span class="meal-logging"><%= current_user.meals.count - 1 %></span>
+  </p>
+
+  <div class="meal-reporting">
+    <div class="meals tooltip-item">
+        <div class="daily_meal">
           <img src="http://i.imgur.com/HWk1OSI.png">
+        </div>
+        <div class="checked animated tada">
+          <%= image_tag 'check.png' %>
+        </div>
+        <div class="closed animated tada">
+          <%= image_tag 'close.png' %>
         </div>
         <div class="tooltip">
           <p>To report and track your meals you can click on each meal icon and select complete or incomplete. The meals will highlight when reported and you will see new empty icons appear in case you need to add another meal.</p>
       </div>
-      <% end %>
+    </div>
+
+    <div class="meal buttons">
+      <%= link_to "✓", meal_path(current_user.meals.last), method: :patch, id: 'checkButton', remote: true %></li>
+      <%= link_to 'X', meal_path(current_user.meals.last), method: :delete, id: 'xButton', remote: true %> </li>
+    </div>
   </div>
 </div>

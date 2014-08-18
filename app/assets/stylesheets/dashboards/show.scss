@@ -197,13 +197,9 @@ nav a.navLink {
 .dashboard {
   .daily_meal {
     width: 33%;
-    display: inline-block;
-    float: left;
-    width: 33%;
-    text-align: center;
+    margin: auto;
+
     #checkButton {
-      position: relative;
-      left: 33%;
       background-color: #2ecc71;
       border-radius: 5px;
 
@@ -215,8 +211,6 @@ nav a.navLink {
     #xButton {
       background-color: #e74c3c;
       border-radius: 5px;
-      position: relative;
-      left: 40%;
 
       a {
         padding: 5px 15px;
@@ -233,6 +227,21 @@ nav a.navLink {
       // left: 47px;
     }
   }
+
+  .checked {
+    display: none;
+    position: absolute;
+    top: -26px;
+    left: 378px;
+  }
+
+  .closed {
+    display: none;
+    position: absolute;
+    top: -26px;
+    left: 378px;
+  }
+
   img {
     opacity: .8;
     display: block;
@@ -241,18 +250,5 @@ nav a.navLink {
     margin-right: auto;
     margin-bottom: 10px;
     padding: 10px;
-    border: solid black 2px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
