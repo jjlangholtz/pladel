@@ -1,6 +1,8 @@
 <nav>
   <img src="http://i.imgur.com/96GXzhc.png">
-  <%= link_to 'PLADEL', root_path, class: 'navLogo' %>
+  <div class="logoContainer">
+    <%= link_to 'PLADEL', root_path, class: 'navLogo', id: 'logo'%>
+  </div>  
 
   <% if signed_in? %>
     <%= link_to 'Sign out', sign_out_path, method: :delete, class: 'navLink' %>
