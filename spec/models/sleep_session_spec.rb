@@ -15,7 +15,7 @@ describe SleepSession do
 
   describe '#score' do
     context 'when calculated score is over 30' do
-      it 'returns 30' do
+      pending 'returns 30' do
         sleep_session = create(:sleep_session, deep: 480, total: 480, times_woken: 0)
 
         expect(sleep_session.score).to eq 30
@@ -23,7 +23,7 @@ describe SleepSession do
     end
 
     context 'given a horrible sleep session' do
-      it 'returns a score for the sleep session' do
+      pending 'returns a score for the sleep session' do
         sleep_session = create(:sleep_session, deep: 240, total: 240, times_woken: 3)
 
         expect(sleep_session.score).to eq 4
