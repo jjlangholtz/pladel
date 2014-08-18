@@ -1,3 +1,5 @@
+
+
 nav a.navLink {
   @media screen and (max-width: 450px) {
   font-size: 0.7em;
@@ -94,7 +96,50 @@ nav a.navLink {
   width: 300px;
   display: block;
   margin: auto;
+  @media screen and (min-width: 550px) {
+    width: 500px;
+  }  
 }
+
+.overallGrade {
+  position: absolute;
+  font-size: 9em;
+  left: 101px;
+  top: 37px;
+  color: #75C9BC;  
+
+  @media screen and (min-width: 550px) {
+    font-size: 16em;
+    left: 164px;
+    top: 50px;
+  }  
+}
+
+#smallOverallDial canvas {
+    @media screen and (min-width: 550px) {
+    display: none;
+    }
+}  
+
+#overallDial {
+  @media screen and (min-width: 550px) {
+  display: none;
+  }
+} 
+ 
+#overallDialLarge {
+  display: none;
+  @media screen and (min-width: 550px) {
+  display: inline;
+  }
+  .overallGradeLarge {
+    position: absolute;
+    top: 134px;
+    margin-left: 168px;
+    font-size: 15em;
+    color: #75C9BC;
+  }
+}  
 
 .smallDial {
   display: inline-block;
@@ -102,21 +147,33 @@ nav a.navLink {
   width: 33%;
   position: relative;
   p {
-    position: relative;
-    bottom: 85px; 
+    position: absolute;
+    bottom: 22px;
+    left: 37px; 
     font-size: 2.4em;
     color: #75C9BC;
+    @media screen and (min-width: 550px) {
+    left: 69px;
+    }
   }
 }
 
-#sleep {
+#movement {
   bottom: 25px;
 }
 
 #nutrition {
+  animation-delay: .5s;
+  -webkit-animation-delay: .5s;
+  -moz-animation-delay: .5s;
   bottom: 25px;
 }
 
+#sleep {
+  animation-delay: .25s;
+  -webkit-animation-delay: .25s;
+  -moz-animation-delay: .25s;
+}
 
 
 // Meals section

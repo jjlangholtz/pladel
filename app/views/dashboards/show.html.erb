@@ -1,7 +1,6 @@
 <% provide(:title, 'Dashboard') %>
 <div id="fixedBG"></div>
 <div class="dashboard">
-
   <%= render 'shared/modal' %>
   <input type="text" value="<%= ((current_user.sleep_composite / 0.3).round + (current_user.movement_composite / 100).round + composite_percent(current_user)) / health_gpa_percent_denominator(current_user) %>" class="dial" data-readOnly="true" data-fgColor="#75c9bc">
   <div class="health tooltip-item">
@@ -24,6 +23,7 @@
       </div>
       <div class="letter"><%= current_user.sleep_score %></div>
 
+
     </div>
   <% end %>
 
@@ -38,6 +38,7 @@
       </div>
       </div>
       <div class="letter"><%= current_user.movement_score %></div>
+
     </div>
   <% end %>
 
