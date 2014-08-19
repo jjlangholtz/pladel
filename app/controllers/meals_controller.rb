@@ -1,6 +1,6 @@
 class MealsController < ApplicationController
   def update
-    meal = Meal.find(params[:id])
+    meal = Meal.last
     meal.update_attribute('status', 'complete')
     current_user.create_active_meals(1)
     respond_to do |format|
@@ -10,7 +10,7 @@ class MealsController < ApplicationController
   end
 
   def destroy
-    meal = Meal.find(params[:id])
+    meal = Meal.last
     meal.update_attribute('status', 'incomplete')
     current_user.create_active_meals(1)
     respond_to do |format|
