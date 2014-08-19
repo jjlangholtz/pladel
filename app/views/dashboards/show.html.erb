@@ -16,7 +16,8 @@
 
   <% unless sleep_composite_empty?(current_user) %>
     <div class="sleep tooltip-item">
-      <p class="sleep-percentage">Sleep: <%= "#{(current_user.sleep_composite / 0.30).round}%" %></p>
+      <p class="percentage"><%= "#{(current_user.sleep_composite / 0.30).round}%" %></p>
+      <p class="category">Sleep</p>
       <div class="tooltip">
         <p>Your sleep score is calculated by the amount of sleep and quality. It is calculated daily, weekly and all time. You can toggle between daily, weekly, monthly and all time by clicking on the buttons below the chart.</p>
       </div>
@@ -25,7 +26,8 @@
 
   <% unless movement_composite_empty?(current_user) %>
     <div class="movement tooltip-item">
-      <p class="movement-percentage">Movement: <%= "#{(current_user.movement_composite / 100).round}%" %></p>
+      <p class="percentage"><%= "#{(current_user.movement_composite / 100).round}%" %></p>
+      <p class="category">Movement</p>
       <div class="tooltip">
         <p>Your movement score is calculated by the amount of movement and intensity. It is calculated daily, weekly and all time. You can toggle between daily, weekly, monthly and all time by clicking on the buttons below the chart.</p>
       </div>
@@ -34,14 +36,14 @@
 
   <% unless composite_percent(current_user) == 0 %>
     <div class="nutrition tooltip-item">
-      <p class="nutrition-percentage">Nutrition: <%= "#{composite_percent(current_user)}%" %></p>
+      <p class="percentage"><%= "#{composite_percent(current_user)}%" %></p>
+      <p class="category">Nutrition</p>
       <div class="tooltip">
         <p>Your nutrition score is calculated by the percentage of meals eaten daily, weekly and all time. You can toggle between daily, weekly, monthly and all time by clicking on the buttons below the chart.</p>
       </div>
     </div>
   <% end %>
 
-  <%= link_to 'Sync data', sessions_path %>
 
   <p>
     Meals logged: <span class="meal-logging"><%= current_user.meals.count - 1 %></span>
@@ -66,6 +68,7 @@
     <div class="meal_buttons">
       <%= button_to 'I ate healthy', meal_path(current_user.meals.last), method: :patch, id: 'checkButton', remote: true %></li>
       <%= button_to 'I ate poorly', meal_path(current_user.meals.last), method: :delete, id: 'xButton', remote: true %> </li>
+      <%= button_to 'Sync data', sessions_path, method: :get, class: 'sync', remote: true %>
     </div>
   </div>
 </div>

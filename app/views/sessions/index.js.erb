@@ -1,10 +1,5 @@
-$('.meal-logging').html('<%= current_user.meals.count - 1 %>');
-
-$('.checked').show().fadeOut(1500);
-
 $('.letter.overall').html('<%= current_user.health_gpa %>');
 
-$('.nutrition .percentage').html('<%= "#{composite_percent(current_user)}%" %>');
 $('.movement .percentage').html('<%= "#{(current_user.movement_composite / 100).round}%" %>');
 $('.sleep .percentage').html('<%= "#{(current_user.sleep_composite / 0.30).round}%" %>');
 
