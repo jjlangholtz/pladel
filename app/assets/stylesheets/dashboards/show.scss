@@ -53,6 +53,27 @@ nav a.navLink {
     height: 10px;
   }
 
+  .sleep, .movement, .nutrition {
+    display: inline-block;
+
+    p.percentage {
+      font-weight: 800;
+      font-size: 2em;
+      border-bottom: 1px solid #333333;
+    }
+
+    p.category {
+      text-transform: uppercase;
+      font-family: Roboto;
+      font-weight: 800;
+      margin-top: -20px;
+    }
+  }
+
+  .sync {
+    display: block;
+  }
+
   .progress-bar-indication {
     $progress-border-color: $base-border-color;
     $progress-border: 1px solid $progress-border-color;
