@@ -172,6 +172,7 @@ a.about {
     img {
       width: 80px;
       border-radius: 50%;
+      border: solid #75c9bc 4px;
       @media screen and (min-width: 450px) {
       width: 120px;
     }
@@ -205,6 +206,7 @@ a.about {
 }
 
 .team{
+  text-decoration: underline;
   font-size: 2em;
   padding: 20px;
   position: relative;
