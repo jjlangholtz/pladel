@@ -2,6 +2,8 @@ $('.meal-logging').html('<%= current_user.meals.count - 1 %>');
 
 $('.closed').show().fadeOut(1500);
 
+$('.letter.overall').html('<%= current_user.health_gpa %>');
+
 $("#doughnutChart").html('');
 $("#doughnutChart").drawDoughnutChart([
   { title: "Overall GPA",         value : <%= ((current_user.sleep_composite / 0.3).round + (current_user.movement_composite / 100).round + composite_percent(current_user)) / health_gpa_percent_denominator(current_user) %>,  color: "#75C9BC" },
