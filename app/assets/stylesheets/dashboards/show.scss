@@ -362,11 +362,9 @@ nav a.navLink {
 }
 .doughnutSummaryTitle {
   position: absolute;
-  top: 50%;
   width: 100%;
-  margin-top: -27%;
-  font-size: 22px;
-  letter-spacing: .06em;
+  font-size: 3em;
+  opacity: .5;
 }
 .doughnutSummaryNumber {
   position: absolute;
@@ -374,5 +372,6 @@ nav a.navLink {
   width: 100%;
   margin-top: -15%;
   font-size: 55px;
+  display: none;
 }
 g path:hover { opacity: .65; }
