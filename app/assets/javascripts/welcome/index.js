@@ -4,8 +4,8 @@ $(document).ready(function(){
 	$('#nutrition').addClass('animated fadeInRight');
 	$('#overallDial').addClass('animated fadeInDown');
 
-	$('nav img').addClass('animated rotateIn');
-	$('nav div').addClass('animated fadeInRightBig');
+	$('.signUp').addClass('animated zoomIn');
+	$('header h1').addClass('animated fadeInRightBig');
 });
 
 
