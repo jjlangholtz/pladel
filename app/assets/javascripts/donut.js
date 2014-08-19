@@ -38,7 +38,7 @@
         shortInt: false,
         tipClass: "doughnutTip",
         summaryClass: "doughnutSummary",
-        summaryTitle: "GPA:",
+        summaryTitle: $('.letter.overall').text(),
         summaryTitleClass: "doughnutSummaryTitle",
         summaryNumberClass: "doughnutSummaryNumber",
         beforeDraw: function() {  },
