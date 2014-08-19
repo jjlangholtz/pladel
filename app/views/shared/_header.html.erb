@@ -1,20 +1,45 @@
-<nav>
-  <img src="http://i.imgur.com/96GXzhc.png">
+<div class="js-menu-screen menu-screen"></div>
+<div id="main-nav">
+  <img src="http://i.imgur.com/96GXzhc.png" id="logoImg">
   <div class="logoContainer">
     <%= link_to 'PLADEL', root_path, class: 'navLogo', id: 'logo'%>
-  </div>  
+  </div>
 
-  <% if signed_in? %>
-    <%= link_to 'Sign out', sign_out_path, method: :delete, class: 'navLink' %>
-    <%= link_to 'Settings', edit_user_path(current_user), class: 'navLink', remote: true if controller.controller_name == 'dashboards' %>
-    <% if controller.controller_name == 'welcome' %>
-      <%= link_to 'Dashboard', dashboard_path, class: 'navLink' %>
-      <%= link_to 'About', about_path, class: 'navLink' %>
-      <%= link_to 'Team', team_path, class: 'navLink' %>
-    <% end %>
-  <% else %>
-    <%= link_to 'About', about_path, class: 'navLink' %>
-    <%= link_to 'Team', team_path, class: 'navLink' %>
-    <%= link_to 'Sign in', sign_in_path, class: 'navLink' %>
-  <% end %>
-</nav>
+  <button type="button" class="js-menu-trigger sliding-menu-button">
+    <img src="http://i.imgur.com/sxGh4wE.png" alt="">
+  </button>
+
+  <nav class="js-menu sliding-menu-content">
+    <ul>
+      <% if signed_in? %>
+        <li>
+        <%= link_to 'Sign out', sign_out_path, method: :delete, class: 'navLink' %>
+      </li>
+      <li>
+        <%= link_to 'Settings', edit_user_path(current_user), class: 'navLink', remote: true if controller.controller_name == 'dashboards' %>
+      </li>
+        <% if controller.controller_name == 'welcome' %>
+        <li>
+          <%= link_to 'Dashboard', dashboard_path, class: 'navLink' %>
+        </li>
+        <li>
+          <%= link_to 'About', about_path, class: 'navLink' %>
+        </li>
+        <li>
+          <%= link_to 'Team', team_path, class: 'navLink' %>
+        </li>
+        <% end %>
+      <% else %>
+      <li>
+        <%= link_to 'About', about_path, class: 'navLink' %>
+      </li>
+      <li>
+        <%= link_to 'Team', team_path, class: 'navLink' %>
+      </li>
+      <li>
+        <%= link_to 'Sign in', sign_in_path, class: 'navLink' %>
+      </li>
+      <% end %>
+    </ul>
+  </nav>
+</div>

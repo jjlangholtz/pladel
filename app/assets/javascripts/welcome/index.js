@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 	$('#sleep').addClass('animated fadeInUp');
 	$('#movement').addClass('animated fadeInLeft');
 	$('#nutrition').addClass('animated fadeInRight');
@@ -6,6 +6,18 @@ $(document).ready(function(){
 
 	$('.signUp').addClass('animated zoomIn');
 	$('header h1').addClass('animated fadeInRightBig');
+
+	$('.js-menu-trigger').on('click touchstart', function(e){
+    $('.js-menu').toggleClass('is-visible');
+    $('.js-menu-screen').toggleClass('is-visible');
+    e.preventDefault();
+  });
+
+  $('.js-menu-screen').on('click touchstart', function(e){
+    $('.js-menu').toggleClass('is-visible');
+    $('.js-menu-screen').toggleClass('is-visible');
+    e.preventDefault();
+  });
 });
 
 

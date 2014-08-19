@@ -2,8 +2,8 @@
 
 nav a.navLink {
   @media screen and (max-width: 450px) {
-  font-size: 0.7em;
-  margin: 25px 4px;
+  // font-size: 0.7em;
+  // margin: 25px 4px;
   }
 }
 
@@ -364,7 +364,7 @@ nav a.navLink {
   position: absolute;
   width: 100%;
   font-size: 3em;
-  opacity: .5;
+  opacity: 1;
 }
 .doughnutSummaryNumber {
   position: absolute;
