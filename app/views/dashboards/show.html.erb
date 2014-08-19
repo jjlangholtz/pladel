@@ -19,7 +19,6 @@
   </div>
 
   <div id="doughnutChart" class="chart"></div>
-  
 
   <% unless sleep_composite_empty?(current_user) %>
     <div class="sleep animated fadeInLeft">
@@ -101,9 +100,8 @@
   <script>
 $(function(){
   $("#doughnutChart").drawDoughnutChart([
-    { title: "Overall GPA",         value : 100,  color: "#75C9BC" },
-    { title: "Room for improvement", value:  80,   color: "#585858" },
-
+    { title: "Overall GPA",         value : <%= ((current_user.sleep_composite / 0.3).round + (current_user.movement_composite / 100).round + composite_percent(current_user)) / health_gpa_percent_denominator(current_user) %>,  color: "#75C9BC" },
+    { title: "Room for improvement", value:  100 - <%= ((current_user.sleep_composite / 0.3).round + (current_user.movement_composite / 100).round + composite_percent(current_user)) / health_gpa_percent_denominator(current_user) %>,   color: "#585858" },
   ]);
 });
   </script>
