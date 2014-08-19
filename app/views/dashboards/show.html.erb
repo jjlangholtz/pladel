@@ -44,7 +44,6 @@
     </div>
   <% end %>
 
-  <%= link_to 'Sync data', sessions_path, class: 'sync' %>
 
   <p>
     Meals logged: <span class="meal-logging"><%= current_user.meals.count - 1 %></span>
@@ -69,6 +68,7 @@
     <div class="meal_buttons">
       <%= button_to 'I ate healthy', meal_path(current_user.meals.last), method: :patch, id: 'checkButton', remote: true %></li>
       <%= button_to 'I ate poorly', meal_path(current_user.meals.last), method: :delete, id: 'xButton', remote: true %> </li>
+      <%= button_to 'Sync data', sessions_path, method: :get, class: 'sync' %>
     </div>
   </div>
 </div>

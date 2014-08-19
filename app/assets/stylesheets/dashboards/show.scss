@@ -70,10 +70,6 @@ nav a.navLink {
     }
   }
 
-  .sync {
-    display: block;
-  }
-
   .progress-bar-indication {
     $progress-border-color: $base-border-color;
     $progress-border: 1px solid $progress-border-color;
@@ -379,8 +375,3 @@ nav a.navLink {
   font-size: 55px;
 }
 g path:hover { opacity: .65; }
-
-
-
-
-
