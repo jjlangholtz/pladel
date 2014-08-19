@@ -1,3 +1,5 @@
+
+
 #first {
   margin-top: 100px;
 }
@@ -5,7 +7,7 @@
 .bio {
   @include span-columns(9);
   @include shift(1);
-  color: white;
+  color: #585858;
   font-size: .9em;
   padding: 10px;
   font-size: .7em;
@@ -19,6 +21,7 @@
   img {
     @include span-columns(4 of 12);
     border-radius: 50%;
+    border: solid #75c9bc 4px;
     @media screen and (min-width: 700px) {
     @include span-columns(3 of 12);
     }
