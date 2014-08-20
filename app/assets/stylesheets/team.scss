@@ -21,7 +21,7 @@
   img {
     @include span-columns(4 of 12);
     border-radius: 50%;
-    border: solid #75c9bc 4px;
+    // border: solid #75c9bc 4px;
     @media screen and (min-width: 700px) {
     @include span-columns(3 of 12);
     }
