@@ -58,14 +58,6 @@
   </div>
 
 
-    <p class="mealsLogged">
-      MEALS LOGGED TODAY: <span class="meal-logging"><%= Meal.today(current_user).count - 1 %></span>
-    </p>
-
-    <p class="mealsLogged">
-      LAST LOGGED: <span class="meal-time"><%= time_ago_in_words Meal.today(current_user).last.updated_at  %></span>
-    </p>
-
     <div class="meal-reporting">
       <div class="meals tooltip-item">
           <div class="closed animated tada">
@@ -77,10 +69,20 @@
       </div>
 
       <div class="meal_buttons">
-        <%= button_to 'I ate healthy', meal_path(current_user.meals.last), method: :patch, id: 'checkButton', remote: true %></li>
-        <%= button_to 'I ate poorly', meal_path(current_user.meals.last), method: :delete, id: 'xButton', remote: true %> </li>
-        <%= button_to 'Sync data', sessions_path, method: :get, class: 'sync', remote: true %>
+        <%= link_to 'ate healthy', meal_path(current_user.meals.last), method: :patch, id: 'checkButton', remote: true %></li>
+        <%= link_to 'ate poorly', meal_path(current_user.meals.last), method: :delete, id: 'xButton', remote: true %> </li>
       </div>
+
+      <div class="mealsLoggedWrqpper">
+        <p class="mealsLogged">
+          MEALS LOGGED: <span class="meal-logging"><%= Meal.today(current_user).count - 1 %></span>
+        </p>
+
+        <p class="mealsLogged">
+          LAST LOGGED: <span class="meal-time"><%= time_ago_in_words Meal.today(current_user).last.updated_at  %></span>
+        </p>
+      </div>  
+
     </div>
 </div>
 

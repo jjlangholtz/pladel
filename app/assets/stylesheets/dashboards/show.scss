@@ -11,7 +11,7 @@ nav a.navLink {
   padding-top: 80px;
   text-align: center;
   background-color: white;
-  height: 750px;
+  // height: 750px;
 
   .percent {
     float: right;
@@ -70,7 +70,7 @@ nav a.navLink {
       width: 27px;
       position: absolute;
       top: 13px;
-      left: 20px;
+      left: 17px;
     }
 
     p.percentage {
@@ -142,8 +142,6 @@ nav a.navLink {
 
 // Meals section
 .meals {
-  padding-top: 15px;
-  width: 75%;
   margin-left: auto;
   margin-right: auto;
 
@@ -193,16 +191,18 @@ nav a.navLink {
   }
 
   .mealsLogged {
-    color: #585858;
+    color: black;
     font-size: .8em;
-  }
+    margin: 25px 10px 0 10px;
+    display: inline-block;
+  } 
 
   .meal_buttons {
-    input {
+    a {
       background-color: transparent;
       color: #111111;
-      padding: 17px 30px 14px 32px;
-      border: 2px solid #75C9BC;
+      padding: 14px 25px;
+      border: 3px solid #75C9BC;
       text-transform: uppercase;
       font-weight: 600;
       font-family: Roboto;
