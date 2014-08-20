@@ -1,4 +1,4 @@
-$('.meal-logging').html('<%= current_user.meals.count - 1 %>');
+$('.meal-logging').html('<%= Meal.today(current_user).count - 1 %>');
 
 $('.checked').show().fadeOut(1500);
 

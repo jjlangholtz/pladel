@@ -59,7 +59,7 @@
 
 
     <p class="mealsLogged">
-      MEALS LOGGED: <span class="meal-logging"><%= current_user.meals.count - 1 %></span>
+      MEALS LOGGED TODAY: <span class="meal-logging"><%= Meal.today(current_user).count - 1 %></span>
     </p>
 
     <div class="meal-reporting">
