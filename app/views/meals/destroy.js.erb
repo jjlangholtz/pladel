@@ -1,4 +1,5 @@
 $('.meal-logging').html('<%= Meal.today(current_user).count - 1 %>');
+$('.meal-time').html('<%= time_ago_in_words Meal.today(current_user).last.updated_at  %>');
 
 $('.closed').show().fadeOut(1500);
 
