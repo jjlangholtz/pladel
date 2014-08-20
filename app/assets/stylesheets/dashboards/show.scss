@@ -2,17 +2,10 @@
 
 nav a.navLink {
   @media screen and (max-width: 450px) {
-  font-size: 0.7em;
-  margin: 25px 4px;
+  // font-size: 0.7em;
+  // margin: 25px 4px;
   }
 }
-
-// #fixedBG {
-//   height: 200px;
-//   background-color: #585858;
-//   position: fixed;
-//   z-index: -10;
-// }
 
 .dashboard {
   padding-top: 80px;
@@ -22,6 +15,12 @@ nav a.navLink {
 
   .percent {
     float: right;
+  }
+
+  #firstSectionWrapper {
+    // background: url(http://i.imgur.com/ZTpH5uP.png?1) no-repeat 50% 70%;
+    // background-size: cover;
+    // background-color: #F0F0F0;
   }
 
 // .overallGrade {
@@ -45,6 +44,13 @@ nav a.navLink {
   //   display: none;
   // }
 
+.scoresWrapper {
+  display: inline-block;
+  animation-delay: .25s;
+  -webkit-animation-delay: .25s;
+  -moz-animation-delay: .25s;
+}
+
   .letter.overall {
     display: none;
   }
@@ -54,21 +60,41 @@ nav a.navLink {
   }
 
   .sleep, .movement, .nutrition {
-    display: inline-block;
+    float: left;
+    width: 33%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 0;
+
+    img {
+      width: 27px;
+      position: absolute;
+      top: 13px;
+      left: 20px;
+    }
 
     p.percentage {
+      font-family: 'Gruppo', Sans-serif;
       font-weight: 800;
       font-size: 2em;
-      border-bottom: 1px solid #333333;
+      position: relative;
+      left: 16px;
+      // border-bottom: 1px solid #333333;
     }
 
     p.category {
       text-transform: uppercase;
-      font-family: Roboto;
-      font-weight: 800;
+      font-family: 'Michroma', Sans-serif;
       margin-top: -20px;
+      font-size: .7em;
+      color: #75C9BC;
     }
   }
+
+  // .sleep p {
+  //   position: relative;
+  //   left: 8px;
+  // }
 
   .progress-bar-indication {
     $progress-border-color: $base-border-color;
@@ -111,89 +137,6 @@ nav a.navLink {
       text-align: left;
     }
   }
-}
-
-.dials {
-  width: 300px;
-  display: block;
-  margin: auto;
-  @media screen and (min-width: 550px) {
-    width: 500px;
-  }  
-}
-
-.overallGrade {
-  position: absolute;
-  font-size: 9em;
-  left: 101px;
-  top: 37px;
-  color: #75C9BC;  
-
-  @media screen and (min-width: 550px) {
-    font-size: 16em;
-    left: 164px;
-    top: 50px;
-  }  
-}
-
-#smallOverallDial canvas {
-    @media screen and (min-width: 550px) {
-    display: none;
-    }
-}  
-
-#overallDial {
-  @media screen and (min-width: 550px) {
-  display: none;
-  }
-} 
- 
-#overallDialLarge {
-  display: none;
-  @media screen and (min-width: 550px) {
-  display: inline;
-  }
-  .overallGradeLarge {
-    position: absolute;
-    top: 134px;
-    margin-left: 168px;
-    font-size: 15em;
-    color: #75C9BC;
-  }
-}  
-
-.smallDial {
-  display: inline-block;
-  float: left;
-  width: 33%;
-  position: relative;
-  p {
-    position: absolute;
-    bottom: 22px;
-    left: 37px; 
-    font-size: 2.4em;
-    color: #75C9BC;
-    @media screen and (min-width: 550px) {
-    left: 69px;
-    }
-  }
-}
-
-#movement {
-  bottom: 25px;
-}
-
-#nutrition {
-  animation-delay: .5s;
-  -webkit-animation-delay: .5s;
-  -moz-animation-delay: .5s;
-  bottom: 25px;
-}
-
-#sleep {
-  animation-delay: .25s;
-  -webkit-animation-delay: .25s;
-  -moz-animation-delay: .25s;
 }
 
 
@@ -249,6 +192,11 @@ nav a.navLink {
     }
   }
 
+  .mealsLogged {
+    color: #585858;
+    font-size: .8em;
+  }
+
   .meal_buttons {
     input {
       background-color: transparent;
@@ -274,34 +222,43 @@ nav a.navLink {
   .checked {
     display: none;
     position: absolute;
-    top: -26px;
-    left: 378px;
+    top: 54px;
+    left: 50px;
+    z-index: 1;
+    img {
+      width: 200px;
+    }
+
   }
 
   .closed {
     display: none;
-    position: absolute;
-    top: -26px;
-    left: 378px;
+    // // position: absolute;
+    // top: -26px;
+    // left: 378px;
   }
 
-  img {
-    opacity: .8;
-    display: block;
-    width: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-    padding: 10px;
+  .meal-reporting img {
+    // opacity: .8;
+    // display: block;
+    // width: 200px;
+    // margin-left: auto;
+    // margin-right: auto;
+    // margin-bottom: 10px;
+    // padding: 10px;
   }
 }
 
 //Time of data links
 
 .dataTime {
+  padding-bottom: 10px;
   a{
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 8px;
+    margin-right: 8px;
+    color: #75c9bc;
+    font-family: 'Michroma', Helvetica;
+    font-size: .8em;
   }
   a:first-child {
     text-decoration: underline;
@@ -309,6 +266,16 @@ nav a.navLink {
 }
 
 //donut chart test
+
+.gpaTitle {
+  font-family: 'Michroma', Sans-serif;
+  position: absolute;
+  top: 62px;
+  left: 99px;
+  font-size: 2em;
+  opacity: .2;
+}
+
 
 .chart {
   position: relative;
@@ -361,11 +328,10 @@ nav a.navLink {
 }
 .doughnutSummaryTitle {
   position: absolute;
-  top: 50%;
   width: 100%;
-  margin-top: -27%;
-  font-size: 22px;
-  letter-spacing: .06em;
+  font-size: 8em;
+  opacity: 1;
+  font-family: 'Michroma', Sans-serif;
 }
 .doughnutSummaryNumber {
   position: absolute;
@@ -373,5 +339,20 @@ nav a.navLink {
   width: 100%;
   margin-top: -15%;
   font-size: 55px;
+  display: none;
 }
 g path:hover { opacity: .65; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
