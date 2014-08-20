@@ -165,8 +165,8 @@ class User < ActiveRecord::Base
     end
   end
 
-  def nutrition_composite
-    total_meals == 0 ? 0 : complete_meals.to_f / total_meals.to_f
+  def nutrition_composite(timeframe = :alltime)
+    total_meals(timeframe) == 0 ? 0 : complete_meals(timeframe).to_f / total_meals(timeframe).to_f
   end
 
   def sleep_composite
@@ -188,12 +188,24 @@ class User < ActiveRecord::Base
     end
   end
 
-  def total_meals
-    Meal.where(status: ['complete', 'incomplete'], user: self.id).count
+  def total_meals(timeframe)
+    if timeframe == :alltime
+      Meal.where(status: ['complete', 'incomplete'], user: self.id).count
+    else
+      Meal.where('status = ? AND user = ? AND updated_at >= ? AND updated_at < ?',
+                 ['complete', 'incomplete'], self.id,
+                 Time.now.midnight, (Time.now + 1.day).midnight)
+    end
   end
 
-  def complete_meals
-    Meal.where(status: 'complete', user: self.id).count
+  def complete_meals(timeframe)
+    if timeframe == :alltime
+      Meal.where(status: 'complete', user: self.id).count
+    else
+      Meal.where('status = ? AND user = ? AND updated_at >= ? AND updated_at < ?',
+                 'complete', self.id,
+                 Time.now.midnight, (Time.now + 1.day).midnight)
+    end
   end
 
   def active_meals
