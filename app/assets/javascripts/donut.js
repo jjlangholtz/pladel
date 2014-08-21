@@ -20,7 +20,7 @@
       PI = Math.PI,
       settings = $.extend({
         segmentShowStroke : true,
-        segmentStrokeColor : "#0C1013",
+        segmentStrokeColor : "white",
         segmentStrokeWidth : 1,
         baseColor: "#bdc3c7",
         baseOffset: 4,

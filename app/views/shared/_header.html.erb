@@ -6,7 +6,7 @@
   </div>
 
   <button type="button" class="js-menu-trigger sliding-menu-button">
-    <img src="http://i.imgur.com/sxGh4wE.png" alt="">
+    <img src="http://i.imgur.com/z0T2YKN.png" alt="">
   </button>
 
   <nav class="js-menu sliding-menu-content">
@@ -17,6 +17,9 @@
       </li>
       <li>
         <%= link_to 'Settings', edit_user_path(current_user), class: 'navLink', remote: true if controller.controller_name == 'dashboards' %>
+      </li>
+      <li>
+        <%= link_to 'Sync data', sessions_path, method: :get, class: 'navLink', remote: true %>
       </li>
         <% if controller.controller_name == 'welcome' %>
         <li>

@@ -8,10 +8,10 @@ nav a.navLink {
 }
 
 .dashboard {
-  padding-top: 80px;
+  padding-top: 65px;
   text-align: center;
   background-color: white;
-  height: 750px;
+  // height: 750px;
 
   .percent {
     float: right;
@@ -46,9 +46,9 @@ nav a.navLink {
 
 .scoresWrapper {
   display: inline-block;
-  animation-delay: .25s;
-  -webkit-animation-delay: .25s;
-  -moz-animation-delay: .25s;
+  animation-delay: .15s;
+  -webkit-animation-delay: .15s;
+  -moz-animation-delay: .15s;
 }
 
   .letter.overall {
@@ -70,7 +70,7 @@ nav a.navLink {
       width: 27px;
       position: absolute;
       top: 13px;
-      left: 20px;
+      left: 17px;
     }
 
     p.percentage {
@@ -142,8 +142,6 @@ nav a.navLink {
 
 // Meals section
 .meals {
-  padding-top: 15px;
-  width: 75%;
   margin-left: auto;
   margin-right: auto;
 
@@ -193,24 +191,30 @@ nav a.navLink {
   }
 
   .mealsLogged {
-    color: #585858;
+    color: black;
     font-size: .8em;
-  }
+    margin: 30px 10px 0 10px;
+    display: inline-block;
+  } 
 
   .meal_buttons {
-    input {
-      background-color: transparent;
-      color: #111111;
-      padding: 17px 30px 14px 32px;
-      border: 2px solid #75C9BC;
+    animation-delay: .5s;
+    -webkit-animation-delay: .5s;
+    -moz-animation-delay: .5s;
+    a {
+      background-color: #585858;
+      color: white;
+      padding: 14px 25px;
+      border: 3px solid #75C9BC;
       text-transform: uppercase;
       font-weight: 600;
       font-family: Roboto;
       font-size: 0.8em;
       letter-spacing: 1px;
+      border-radius: 8px;
 
       &:hover {
-        border: 2px solid #111111;
+        border-color: black;
       }
 
       &:focus {
@@ -224,7 +228,7 @@ nav a.navLink {
     position: absolute;
     top: 54px;
     left: 50px;
-    z-index: 1;
+    z-index: 55555;
     img {
       width: 200px;
     }
@@ -233,9 +237,14 @@ nav a.navLink {
 
   .closed {
     display: none;
-    // // position: absolute;
-    // top: -26px;
-    // left: 378px;
+    position: absolute;
+    bottom: 151px;
+    left: 50px;
+    top: 50px;
+    z-index: 55555;
+    img {
+      width: 200px;
+    }
   }
 
   .meal-reporting img {
@@ -252,7 +261,9 @@ nav a.navLink {
 //Time of data links
 
 .dataTime {
-  padding-bottom: 10px;
+  padding-bottom: 13px;
+  padding-top: 13px;
+  
   a{
     margin-left: 8px;
     margin-right: 8px;
@@ -261,7 +272,8 @@ nav a.navLink {
     font-size: .8em;
   }
   a:first-child {
-    text-decoration: underline;
+    border-bottom: solid 3px;
+    padding-bottom: 2px;
   }
 }
 
@@ -273,7 +285,8 @@ nav a.navLink {
   top: 62px;
   left: 99px;
   font-size: 2em;
-  opacity: .2;
+  opacity: .4;
+  z-index: 55555;
 }
 
 
@@ -332,6 +345,7 @@ nav a.navLink {
   font-size: 8em;
   opacity: 1;
   font-family: 'Michroma', Sans-serif;
+  top: -15px;
 }
 .doughnutSummaryNumber {
   position: absolute;
