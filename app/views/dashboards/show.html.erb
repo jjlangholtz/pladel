@@ -42,7 +42,6 @@
           </div> -->
         </div>
 
-      <% unless composite_percent(current_user) == 0 %>
         <div class="nutrition tooltip-item">
           <img src="http://i.imgur.com/yIaczgi.png">
           <p class="percentage"><%= "#{composite_percent(current_user)}%" %></p>
@@ -51,7 +50,6 @@
             <p>Your nutrition score is calculated by the percentage of meals eaten daily, weekly and all time. You can toggle between daily, weekly, monthly and all time by clicking on the buttons below the chart.</p>
           </div> -->
         </div>
-      <% end %>
     </div>
 
   </div>
@@ -59,7 +57,6 @@
 
     <div class="meal-reporting">
       <div class="meals tooltip-item">
-          
           <!-- <div class="tooltip">
             <p>To report and track your meals you can click on each meal icon and select complete or incomplete. The meals will highlight when reported and you will see new empty icons appear in case you need to add another meal.</p>
         </div> -->
@@ -74,9 +71,7 @@
         <p class="mealsLogged">
           MEALS TODAY: <span class="meal-logging"><%= Meal.today(current_user).count - 1 %></span>
         </p>
-
-        
-      </div>  
+      </div>
 
     </div>
 </div>

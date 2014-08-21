@@ -26,6 +26,6 @@ class UsersController < Clearance::UsersController
   private
 
   def url_after_create
-    dashboard_path
+    new_food_path
   end
 end
