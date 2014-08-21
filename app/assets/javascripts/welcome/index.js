@@ -8,7 +8,11 @@ $(function(){
 	$('header h1').addClass('animated fadeInRightBig');
 	$('.scoresWrapper').addClass('animated bounceInUp');
 
-	$('.js-menu-trigger').on('click touchstart', function(e){
+  // $( ".edit_user div label" ).click(function() {
+  //   $( this ).toggleClass( "selected" );
+  // });
+
+	$('.js-menu-trigger').each.on('click touchstart', function(e){
     $('.js-menu').toggleClass('is-visible');
     $('.js-menu-screen').toggleClass('is-visible');
     e.preventDefault();
@@ -20,6 +24,8 @@ $(function(){
     e.preventDefault();
   });
 });
+
+
 
 
 
