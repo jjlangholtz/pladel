@@ -8,7 +8,7 @@ nav a.navLink {
 }
 
 .dashboard {
-  padding-top: 80px;
+  padding-top: 65px;
   text-align: center;
   background-color: white;
   // height: 750px;
@@ -202,7 +202,7 @@ nav a.navLink {
       background-color: #585858;
       color: white;
       padding: 14px 25px;
-      border: 4px solid #75C9BC;
+      border: 3px solid #75C9BC;
       text-transform: uppercase;
       font-weight: 600;
       font-family: Roboto;
@@ -211,7 +211,7 @@ nav a.navLink {
       border-radius: 8px;
 
       &:hover {
-        border: 2px solid #111111;
+        border-color: black;
       }
 
       &:focus {
@@ -233,7 +233,7 @@ nav a.navLink {
   }
 
   .closed {
-    // display: none;
+    display: none;
     position: absolute;
     bottom: 151px;
     left: 50px;
@@ -258,7 +258,9 @@ nav a.navLink {
 //Time of data links
 
 .dataTime {
-  padding-bottom: 10px;
+  padding-bottom: 13px;
+  padding-top: 13px;
+  
   a{
     margin-left: 8px;
     margin-right: 8px;
@@ -267,7 +269,8 @@ nav a.navLink {
     font-size: .8em;
   }
   a:first-child {
-    text-decoration: underline;
+    border-bottom: solid 3px;
+    padding-bottom: 2px;
   }
 }
 

@@ -79,9 +79,7 @@
           MEALS LOGGED: <span class="meal-logging"><%= Meal.today(current_user).count - 1 %></span>
         </p>
 
-        <p class="mealsLogged">
-          LAST LOGGED: <span class="meal-time"><%= time_ago_in_words Meal.today(current_user).last.updated_at  %></span>
-        </p>
+        
       </div>  
 
     </div>
