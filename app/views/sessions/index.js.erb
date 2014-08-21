@@ -3,7 +3,9 @@ $('.letter.overall').html('<%= current_user.health_gpa %>');
 $('.movement .percentage').html('<%= "#{(current_user.movement_composite / 100).round}%" %>');
 $('.sleep .percentage').html('<%= "#{(current_user.sleep_composite / 0.30).round}%" %>');
 
-$("#doughnutChart").html('');
+$('.js-menu').toggleClass('is-visible');
+
+$("#doughnutChart").html('<p class="gpaTitle">GPA</p>');
 $("#doughnutChart").drawDoughnutChart([
   { title: "Overall GPA",         value : <%= ((current_user.sleep_composite / 0.3).round + (current_user.movement_composite / 100).round + composite_percent(current_user)) / health_gpa_percent_denominator(current_user) %>,  color: "#75C9BC" },
   { title: "Room for improvement", value:  100 - <%= ((current_user.sleep_composite / 0.3).round + (current_user.movement_composite / 100).round + composite_percent(current_user)) / health_gpa_percent_denominator(current_user) %>,   color: "#585858" },
