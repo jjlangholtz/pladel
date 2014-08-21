@@ -32,7 +32,7 @@
         animateRotate : true,
         tipOffsetX: -8,
         tipOffsetY: -45,
-        showTip: true,
+        showTip: false,
         showLabel: false,
         ratioFont: 1.5,
         shortInt: false,

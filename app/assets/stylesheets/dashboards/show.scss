@@ -144,6 +144,7 @@ nav a.navLink {
 .meals {
   margin-left: auto;
   margin-right: auto;
+  margin-top: -14px;
 
   .complete {
     border: 1px solid green;
@@ -193,7 +194,7 @@ nav a.navLink {
   .mealsLogged {
     color: black;
     font-size: .8em;
-    margin: 30px 10px 0 10px;
+    margin: 25px 10px 0 10px;
     display: inline-block;
   } 
 
@@ -213,21 +214,21 @@ nav a.navLink {
       letter-spacing: 1px;
       border-radius: 8px;
 
-      &:hover {
-        border-color: black;
-      }
+      // &:hover {
+      //   border-color: black;
+      // }
 
-      &:focus {
-        outline: 0;
-      }
+      // &:focus {
+      //   outline: 0;
+      // }
     }
   }
 
   .checked {
     display: none;
     position: absolute;
-    top: 54px;
-    left: 50px;
+    top: 38px;
+    left: 39px;
     z-index: 55555;
     img {
       width: 200px;
@@ -239,8 +240,8 @@ nav a.navLink {
     display: none;
     position: absolute;
     bottom: 151px;
-    left: 50px;
-    top: 50px;
+    left: 38px;
+    top: 38px;
     z-index: 55555;
     img {
       width: 200px;
@@ -262,11 +263,11 @@ nav a.navLink {
 
 .dataTime {
   padding-bottom: 13px;
-  padding-top: 13px;
+  padding-top: 5px;
   
   a{
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
     color: #75c9bc;
     font-family: 'Michroma', Helvetica;
     font-size: .8em;
@@ -282,9 +283,9 @@ nav a.navLink {
 .gpaTitle {
   font-family: 'Michroma', Sans-serif;
   position: absolute;
-  top: 62px;
-  left: 99px;
-  font-size: 2em;
+  top: 57px;
+  left: 97px;
+  font-size: 1.7em;
   opacity: .4;
   z-index: 55555;
 }
@@ -292,8 +293,8 @@ nav a.navLink {
 
 .chart {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 275px;
+  height: 275px;
   margin: auto;
 }
 .doughnutTip {
@@ -345,7 +346,8 @@ nav a.navLink {
   font-size: 8em;
   opacity: 1;
   font-family: 'Michroma', Sans-serif;
-  top: -15px;
+  top: -28px;
+  left: -3px;
 }
 .doughnutSummaryNumber {
   position: absolute;
