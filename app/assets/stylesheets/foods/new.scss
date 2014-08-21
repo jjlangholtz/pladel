@@ -29,6 +29,11 @@
       font-size: 1.1em;
       color: #75c9bc;
     }
+
+    label.selected {
+      background-color: #585858;
+      color: white;
+    }
   }
 }
 
@@ -57,3 +62,4 @@ input[type="checkbox"] {
   z-index: -1;
   display: none;
 }
+
