@@ -34,8 +34,8 @@ class User < ActiveRecord::Base
         self.movement_sessions.create(steps: r["steps"],
                                       timestamp: r["timestamp"])
       end
-      if routine_sessions.include?(Time.now.midnight.to_s(:iso8601))
-        self.movement_sessions.find_by(timestamp: Time.now.midnight.to_s(:iso8601))
+      if routine_sessions.include?((Time.now.midnight + 4.hours).to_s(:iso8601))
+        self.movement_sessions.find_by(timestamp: (Time.now.midnight + 4.hours).to_s(:iso8601))
         .update_attribute('steps', routine_sessions.sort_by(&:timestamp).last.steps)
       end
     end
