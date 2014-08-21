@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery-knob
 //= require donut
+//= require wow
 //= require_tree .
 

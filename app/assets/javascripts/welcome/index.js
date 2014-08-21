@@ -7,6 +7,7 @@ $(function(){
 	$('.signUp').addClass('animated zoomIn');
 	$('header h1').addClass('animated fadeInRightBig');
 	$('.scoresWrapper').addClass('animated bounceInUp');
+  $('.meal_buttons').addClass('animated zoomIn');
 
 	$('.js-menu-trigger').on('click touchstart', function(e){
     $('.js-menu').toggleClass('is-visible');
