@@ -13,14 +13,21 @@
     <ul>
       <% if signed_in? %>
         <li>
-          <%= link_to 'Sign out', sign_out_path, method: :delete, class: 'navLink' %>
-        </li>
-        <li>
-          <%= link_to 'Settings', edit_user_path(current_user), class: 'navLink', remote: true if controller.controller_name == 'dashboards' %>
-        </li>
-        <li>
-          <%= link_to 'Sync data', sessions_path, method: :get, class: 'navLink', remote: true if controller.controller_name == 'dashboards' %>
-        </li>
+        <%= link_to 'Sign out', sign_out_path, method: :delete, class: 'navLink' %>
+      </li>
+      <li>
+        <%= link_to 'Settings', edit_user_path(current_user), class: 'navLink', remote: true if controller.controller_name == 'dashboards' %>
+      </li>
+      <li>
+        <%= link_to 'Sync data', sessions_path, method: :get, class: 'navLink', remote: true %>
+      </li>
+      <li>
+        <%= link_to 'Foods', new_food_path, class: 'navLink' if controller.controller_name == 'dashboards' %>
+      </li>
+      <li>
+        <%= link_to 'Apps', "https://app.validic.com/#{ENV["VALIDIC_ORGANIZATION_ID"]}/#{current_user.token}", class: 'navLink', target: '_blank' if controller.controller_name == 'dashboards' %>
+      </li>
+
         <% if controller.controller_name == 'welcome' %>
         <li>
           <%= link_to 'Dashboard', dashboard_path, class: 'navLink' %>
