@@ -16,9 +16,6 @@
         <%= link_to 'Sign out', sign_out_path, method: :delete, class: 'navLink' %>
       </li>
       <li>
-        <%= link_to 'Settings', edit_user_path(current_user), class: 'navLink', remote: true if controller.controller_name == 'dashboards' %>
-      </li>
-      <li>
         <%= link_to 'Sync data', sessions_path, method: :get, class: 'navLink', remote: true %>
       </li>
       <li>
